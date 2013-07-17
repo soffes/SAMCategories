@@ -13,5 +13,5 @@ Pod::Spec.new do |spec|
   spec.ios.frameworks = 'UIKit', 'CoreGraphics'
   spec.ios.source_files = 'SAMCategories/**/*.{h,m}'
 
-  spec.osx.source_files = 'SAMCategories/Mac/*.{h,m}'
+  spec.osx.source_files = 'SAMCategories/Foundation/*.{h,m}'
 end
