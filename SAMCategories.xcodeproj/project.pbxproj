@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2103422917975CF80073E4DA /* NSArray+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9220817973C5C00F4418D /* NSArray+SAMAdditions.m */; };
+		2103422A17975CF80073E4DA /* NSData+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9220E17973D4B00F4418D /* NSData+SAMAdditions.m */; };
+		2103422B17975CF80073E4DA /* NSDate+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221017973D4B00F4418D /* NSDate+SAMAdditions.m */; };
+		2103422C17975CF80073E4DA /* NSDictionary+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221217973D4B00F4418D /* NSDictionary+SAMAdditions.m */; };
+		2103422D17975CF80073E4DA /* NSNumber+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221617973D4B00F4418D /* NSNumber+SAMAdditions.m */; };
+		2103422E17975CF80073E4DA /* NSString+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221817973D4B00F4418D /* NSString+SAMAdditions.m */; };
+		2103422F17975CF80073E4DA /* NSURL+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221A17973D4B00F4418D /* NSURL+SAMAdditions.m */; };
+		2103423017975CFD0073E4DA /* SAMArrayCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141C9E817973B5D00CCD4A9 /* SAMArrayCategoryTest.m */; };
+		2103423117975CFD0073E4DA /* SAMDataCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922501797450B00F4418D /* SAMDataCategoryTest.m */; };
+		2103423217975CFD0073E4DA /* SAMDateCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922511797450B00F4418D /* SAMDateCategoryTest.m */; };
+		2103423317975CFD0073E4DA /* SAMDictionaryCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922521797450B00F4418D /* SAMDictionaryCategoryTest.m */; };
+		2103423417975CFD0073E4DA /* SAMStringCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922531797450B00F4418D /* SAMStringCategoryTest.m */; };
+		2103423517975CFD0073E4DA /* SAMURLCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922541797450B00F4418D /* SAMURLCategoryTest.m */; };
+		2141C9E217973B5800CCD4A9 /* SAMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141C9DB17973B5800CCD4A9 /* SAMAppDelegate.m */; };
+		2141C9E317973B5800CCD4A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141C9DD17973B5800CCD4A9 /* main.m */; };
+		2141C9E417973B5800CCD4A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2141C9E017973B5800CCD4A9 /* Default-568h@2x.png */; };
+		2141C9F517973B5D00CCD4A9 /* SAMArrayCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141C9E817973B5D00CCD4A9 /* SAMArrayCategoryTest.m */; };
+		21D921D317973AA400F4418D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D217973AA400F4418D /* UIKit.framework */; };
+		21D921D517973AA400F4418D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D417973AA400F4418D /* Foundation.framework */; };
+		21D921D717973AA400F4418D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D617973AA400F4418D /* CoreGraphics.framework */; };
+		21D921F117973AA400F4418D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921F017973AA400F4418D /* SenTestingKit.framework */; };
+		21D921F217973AA400F4418D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D217973AA400F4418D /* UIKit.framework */; };
+		21D921F317973AA400F4418D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D417973AA400F4418D /* Foundation.framework */; };
+		21D9220917973C5C00F4418D /* NSArray+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9220817973C5C00F4418D /* NSArray+SAMAdditions.m */; };
+		21D9220A17973C6000F4418D /* NSArray+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9220817973C5C00F4418D /* NSArray+SAMAdditions.m */; };
+		21D9221D17973D4B00F4418D /* NSData+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9220E17973D4B00F4418D /* NSData+SAMAdditions.m */; };
+		21D9221E17973D4B00F4418D /* NSData+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9220E17973D4B00F4418D /* NSData+SAMAdditions.m */; };
+		21D9221F17973D4B00F4418D /* NSDate+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221017973D4B00F4418D /* NSDate+SAMAdditions.m */; };
+		21D9222017973D4B00F4418D /* NSDate+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221017973D4B00F4418D /* NSDate+SAMAdditions.m */; };
+		21D9222117973D4B00F4418D /* NSDictionary+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221217973D4B00F4418D /* NSDictionary+SAMAdditions.m */; };
+		21D9222217973D4B00F4418D /* NSDictionary+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221217973D4B00F4418D /* NSDictionary+SAMAdditions.m */; };
+		21D9222517973D4B00F4418D /* NSNumber+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221617973D4B00F4418D /* NSNumber+SAMAdditions.m */; };
+		21D9222617973D4B00F4418D /* NSNumber+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221617973D4B00F4418D /* NSNumber+SAMAdditions.m */; };
+		21D9222717973D4B00F4418D /* NSString+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221817973D4B00F4418D /* NSString+SAMAdditions.m */; };
+		21D9222817973D4B00F4418D /* NSString+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221817973D4B00F4418D /* NSString+SAMAdditions.m */; };
+		21D9222917973D4B00F4418D /* NSURL+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221A17973D4B00F4418D /* NSURL+SAMAdditions.m */; };
+		21D9222A17973D4B00F4418D /* NSURL+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9221A17973D4B00F4418D /* NSURL+SAMAdditions.m */; };
+		21D922561797450B00F4418D /* SAMDataCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922501797450B00F4418D /* SAMDataCategoryTest.m */; };
+		21D922581797450B00F4418D /* SAMDateCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922511797450B00F4418D /* SAMDateCategoryTest.m */; };
+		21D9225A1797450B00F4418D /* SAMDictionaryCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922521797450B00F4418D /* SAMDictionaryCategoryTest.m */; };
+		21D9225C1797450B00F4418D /* SAMStringCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922531797450B00F4418D /* SAMStringCategoryTest.m */; };
+		21D9225E1797450B00F4418D /* SAMURLCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D922541797450B00F4418D /* SAMURLCategoryTest.m */; };
+		21D92273179748DF00F4418D /* UIApplication+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92262179748DF00F4418D /* UIApplication+SAMAdditions.m */; };
+		21D92274179748DF00F4418D /* UIApplication+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92262179748DF00F4418D /* UIApplication+SAMAdditions.m */; };
+		21D92275179748DF00F4418D /* UIColor+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92264179748DF00F4418D /* UIColor+SAMAdditions.m */; };
+		21D92276179748DF00F4418D /* UIColor+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92264179748DF00F4418D /* UIColor+SAMAdditions.m */; };
+		21D92277179748DF00F4418D /* UIControl+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92266179748DF00F4418D /* UIControl+SAMAdditions.m */; };
+		21D92278179748DF00F4418D /* UIControl+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92266179748DF00F4418D /* UIControl+SAMAdditions.m */; };
+		21D92279179748DF00F4418D /* UIDevice+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92268179748DF00F4418D /* UIDevice+SAMAdditions.m */; };
+		21D9227A179748DF00F4418D /* UIDevice+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92268179748DF00F4418D /* UIDevice+SAMAdditions.m */; };
+		21D9227D179748DF00F4418D /* UIScreen+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9226C179748DF00F4418D /* UIScreen+SAMAdditions.m */; };
+		21D9227E179748DF00F4418D /* UIScreen+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9226C179748DF00F4418D /* UIScreen+SAMAdditions.m */; };
+		21D9227F179748DF00F4418D /* UIScrollView+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9226E179748DF00F4418D /* UIScrollView+SAMAdditions.m */; };
+		21D92280179748DF00F4418D /* UIScrollView+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9226E179748DF00F4418D /* UIScrollView+SAMAdditions.m */; };
+		21D92281179748DF00F4418D /* UIView+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92270179748DF00F4418D /* UIView+SAMAdditions.m */; };
+		21D92282179748DF00F4418D /* UIView+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92270179748DF00F4418D /* UIView+SAMAdditions.m */; };
+		21D92283179748DF00F4418D /* UIViewController+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92272179748DF00F4418D /* UIViewController+SAMAdditions.m */; };
+		21D92284179748DF00F4418D /* UIViewController+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92272179748DF00F4418D /* UIViewController+SAMAdditions.m */; };
+		21D922861797575200F4418D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D617973AA400F4418D /* CoreGraphics.framework */; };
+		21D9228C179758F000F4418D /* SAMColorCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92288179758F000F4418D /* SAMColorCategoryTest.m */; };
+		21D9228E179758F000F4418D /* SAMControlCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D92289179758F000F4418D /* SAMControlCategoryTest.m */; };
+		21D92290179758F000F4418D /* SAMViewCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D9228A179758F000F4418D /* SAMViewCategoryTest.m */; };
+		21D9229717975BAB00F4418D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921F017973AA400F4418D /* SenTestingKit.framework */; };
+		21D9229917975BAB00F4418D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D9229817975BAB00F4418D /* Cocoa.framework */; };
+		21D922AC17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D922AB17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist */; };
+		21D922AD17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D922AB17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21D921F417973AA400F4418D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D921C717973AA400F4418D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D921CE17973AA400F4418D;
+			remoteInfo = SAMCategories;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2141C9DA17973B5800CCD4A9 /* SAMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMAppDelegate.h; sourceTree = "<group>"; };
+		2141C9DB17973B5800CCD4A9 /* SAMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMAppDelegate.m; sourceTree = "<group>"; };
+		2141C9DD17973B5800CCD4A9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2141C9DE17973B5800CCD4A9 /* SAMCategories-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SAMCategories-Prefix.pch"; sourceTree = "<group>"; };
+		2141C9E017973B5800CCD4A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2141C9E117973B5800CCD4A9 /* SAMCategories-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAMCategories-Info.plist"; sourceTree = "<group>"; };
+		2141C9E817973B5D00CCD4A9 /* SAMArrayCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMArrayCategoryTest.m; sourceTree = "<group>"; };
+		2141C9EE17973B5D00CCD4A9 /* SAMCategoriesTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAMCategoriesTests-Info.plist"; sourceTree = "<group>"; };
+		21D921CF17973AA400F4418D /* SAMCategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMCategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D921D217973AA400F4418D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		21D921D417973AA400F4418D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		21D921D617973AA400F4418D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		21D921EF17973AA400F4418D /* SAMCategoriesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAMCategoriesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D921F017973AA400F4418D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		21D9220717973C5C00F4418D /* NSArray+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9220817973C5C00F4418D /* NSArray+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9220D17973D4B00F4418D /* NSData+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9220E17973D4B00F4418D /* NSData+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9220F17973D4B00F4418D /* NSDate+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9221017973D4B00F4418D /* NSDate+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9221117973D4B00F4418D /* NSDictionary+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9221217973D4B00F4418D /* NSDictionary+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9221517973D4B00F4418D /* NSNumber+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9221617973D4B00F4418D /* NSNumber+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9221717973D4B00F4418D /* NSString+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9221817973D4B00F4418D /* NSString+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9221917973D4B00F4418D /* NSURL+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9221A17973D4B00F4418D /* NSURL+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D922501797450B00F4418D /* SAMDataCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMDataCategoryTest.m; sourceTree = "<group>"; };
+		21D922511797450B00F4418D /* SAMDateCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMDateCategoryTest.m; sourceTree = "<group>"; };
+		21D922521797450B00F4418D /* SAMDictionaryCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMDictionaryCategoryTest.m; sourceTree = "<group>"; };
+		21D922531797450B00F4418D /* SAMStringCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMStringCategoryTest.m; sourceTree = "<group>"; };
+		21D922541797450B00F4418D /* SAMURLCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMURLCategoryTest.m; sourceTree = "<group>"; };
+		21D92261179748DF00F4418D /* UIApplication+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D92262179748DF00F4418D /* UIApplication+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D92263179748DF00F4418D /* UIColor+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D92264179748DF00F4418D /* UIColor+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D92265179748DF00F4418D /* UIControl+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D92266179748DF00F4418D /* UIControl+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D92267179748DF00F4418D /* UIDevice+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D92268179748DF00F4418D /* UIDevice+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9226B179748DF00F4418D /* UIScreen+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9226C179748DF00F4418D /* UIScreen+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9226D179748DF00F4418D /* UIScrollView+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D9226E179748DF00F4418D /* UIScrollView+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D9226F179748DF00F4418D /* UIView+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D92270179748DF00F4418D /* UIView+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D92271179748DF00F4418D /* UIViewController+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SAMAdditions.h"; sourceTree = "<group>"; };
+		21D92272179748DF00F4418D /* UIViewController+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SAMAdditions.m"; sourceTree = "<group>"; };
+		21D922851797556200F4418D /* SAMCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMCategories.h; sourceTree = "<group>"; };
+		21D92288179758F000F4418D /* SAMColorCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMColorCategoryTest.m; sourceTree = "<group>"; };
+		21D92289179758F000F4418D /* SAMControlCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMControlCategoryTest.m; sourceTree = "<group>"; };
+		21D9228A179758F000F4418D /* SAMViewCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMViewCategoryTest.m; sourceTree = "<group>"; };
+		21D9229617975BAB00F4418D /* SAMCategoriesTestsMac.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAMCategoriesTestsMac.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D9229817975BAB00F4418D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		21D9229B17975BAB00F4418D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		21D9229C17975BAB00F4418D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		21D9229D17975BAB00F4418D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		21D922AB17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAMCategoriesTestsMac-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21D921CC17973AA400F4418D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D921D317973AA400F4418D /* UIKit.framework in Frameworks */,
+				21D921D517973AA400F4418D /* Foundation.framework in Frameworks */,
+				21D921D717973AA400F4418D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D921EB17973AA400F4418D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D922861797575200F4418D /* CoreGraphics.framework in Frameworks */,
+				21D921F117973AA400F4418D /* SenTestingKit.framework in Frameworks */,
+				21D921F217973AA400F4418D /* UIKit.framework in Frameworks */,
+				21D921F317973AA400F4418D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D9229217975BAB00F4418D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D9229717975BAB00F4418D /* SenTestingKit.framework in Frameworks */,
+				21D9229917975BAB00F4418D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2141C98D17973B5300CCD4A9 /* SAMCategories */ = {
+			isa = PBXGroup;
+			children = (
+				21D922851797556200F4418D /* SAMCategories.h */,
+				2141C98E17973B5300CCD4A9 /* Foundation */,
+				21D92260179748DF00F4418D /* UIKit */,
+			);
+			path = SAMCategories;
+			sourceTree = "<group>";
+		};
+		2141C98E17973B5300CCD4A9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				21D9220717973C5C00F4418D /* NSArray+SAMAdditions.h */,
+				21D9220817973C5C00F4418D /* NSArray+SAMAdditions.m */,
+				21D9220D17973D4B00F4418D /* NSData+SAMAdditions.h */,
+				21D9220E17973D4B00F4418D /* NSData+SAMAdditions.m */,
+				21D9220F17973D4B00F4418D /* NSDate+SAMAdditions.h */,
+				21D9221017973D4B00F4418D /* NSDate+SAMAdditions.m */,
+				21D9221117973D4B00F4418D /* NSDictionary+SAMAdditions.h */,
+				21D9221217973D4B00F4418D /* NSDictionary+SAMAdditions.m */,
+				21D9221517973D4B00F4418D /* NSNumber+SAMAdditions.h */,
+				21D9221617973D4B00F4418D /* NSNumber+SAMAdditions.m */,
+				21D9221717973D4B00F4418D /* NSString+SAMAdditions.h */,
+				21D9221817973D4B00F4418D /* NSString+SAMAdditions.m */,
+				21D9221917973D4B00F4418D /* NSURL+SAMAdditions.h */,
+				21D9221A17973D4B00F4418D /* NSURL+SAMAdditions.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		2141C9D817973B5800CCD4A9 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				2141C9D917973B5800CCD4A9 /* Classes */,
+				2141C9DC17973B5800CCD4A9 /* Other Sources */,
+				2141C9DF17973B5800CCD4A9 /* Resources */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		2141C9D917973B5800CCD4A9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2141C9DA17973B5800CCD4A9 /* SAMAppDelegate.h */,
+				2141C9DB17973B5800CCD4A9 /* SAMAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2141C9DC17973B5800CCD4A9 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2141C9DD17973B5800CCD4A9 /* main.m */,
+				2141C9DE17973B5800CCD4A9 /* SAMCategories-Prefix.pch */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2141C9DF17973B5800CCD4A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2141C9E017973B5800CCD4A9 /* Default-568h@2x.png */,
+				2141C9E117973B5800CCD4A9 /* SAMCategories-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2141C9E617973B5D00CCD4A9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2141C9E717973B5D00CCD4A9 /* Foundation */,
+				21D92287179758F000F4418D /* UIKit */,
+				2141C9EE17973B5D00CCD4A9 /* SAMCategoriesTests-Info.plist */,
+				21D922AB17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2141C9E717973B5D00CCD4A9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2141C9E817973B5D00CCD4A9 /* SAMArrayCategoryTest.m */,
+				21D922501797450B00F4418D /* SAMDataCategoryTest.m */,
+				21D922511797450B00F4418D /* SAMDateCategoryTest.m */,
+				21D922521797450B00F4418D /* SAMDictionaryCategoryTest.m */,
+				21D922531797450B00F4418D /* SAMStringCategoryTest.m */,
+				21D922541797450B00F4418D /* SAMURLCategoryTest.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		21D921C617973AA400F4418D = {
+			isa = PBXGroup;
+			children = (
+				2141C98D17973B5300CCD4A9 /* SAMCategories */,
+				2141C9D817973B5800CCD4A9 /* Example */,
+				2141C9E617973B5D00CCD4A9 /* Tests */,
+				21D921D117973AA400F4418D /* Frameworks */,
+				21D921D017973AA400F4418D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21D921D017973AA400F4418D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21D921CF17973AA400F4418D /* SAMCategories.app */,
+				21D921EF17973AA400F4418D /* SAMCategoriesTests.octest */,
+				21D9229617975BAB00F4418D /* SAMCategoriesTestsMac.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21D921D117973AA400F4418D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21D921D217973AA400F4418D /* UIKit.framework */,
+				21D921D417973AA400F4418D /* Foundation.framework */,
+				21D921D617973AA400F4418D /* CoreGraphics.framework */,
+				21D921F017973AA400F4418D /* SenTestingKit.framework */,
+				21D9229817975BAB00F4418D /* Cocoa.framework */,
+				21D9229A17975BAB00F4418D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21D92260179748DF00F4418D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				21D92261179748DF00F4418D /* UIApplication+SAMAdditions.h */,
+				21D92262179748DF00F4418D /* UIApplication+SAMAdditions.m */,
+				21D92263179748DF00F4418D /* UIColor+SAMAdditions.h */,
+				21D92264179748DF00F4418D /* UIColor+SAMAdditions.m */,
+				21D92265179748DF00F4418D /* UIControl+SAMAdditions.h */,
+				21D92266179748DF00F4418D /* UIControl+SAMAdditions.m */,
+				21D92267179748DF00F4418D /* UIDevice+SAMAdditions.h */,
+				21D92268179748DF00F4418D /* UIDevice+SAMAdditions.m */,
+				21D9226B179748DF00F4418D /* UIScreen+SAMAdditions.h */,
+				21D9226C179748DF00F4418D /* UIScreen+SAMAdditions.m */,
+				21D9226D179748DF00F4418D /* UIScrollView+SAMAdditions.h */,
+				21D9226E179748DF00F4418D /* UIScrollView+SAMAdditions.m */,
+				21D9226F179748DF00F4418D /* UIView+SAMAdditions.h */,
+				21D92270179748DF00F4418D /* UIView+SAMAdditions.m */,
+				21D92271179748DF00F4418D /* UIViewController+SAMAdditions.h */,
+				21D92272179748DF00F4418D /* UIViewController+SAMAdditions.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		21D92287179758F000F4418D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				21D92288179758F000F4418D /* SAMColorCategoryTest.m */,
+				21D92289179758F000F4418D /* SAMControlCategoryTest.m */,
+				21D9228A179758F000F4418D /* SAMViewCategoryTest.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		21D9229A17975BAB00F4418D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21D9229B17975BAB00F4418D /* AppKit.framework */,
+				21D9229C17975BAB00F4418D /* CoreData.framework */,
+				21D9229D17975BAB00F4418D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21D921CE17973AA400F4418D /* SAMCategories */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D9220117973AA400F4418D /* Build configuration list for PBXNativeTarget "SAMCategories" */;
+			buildPhases = (
+				21D921CB17973AA400F4418D /* Sources */,
+				21D921CC17973AA400F4418D /* Frameworks */,
+				21D921CD17973AA400F4418D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SAMCategories;
+			productName = SAMCategories;
+			productReference = 21D921CF17973AA400F4418D /* SAMCategories.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21D921EE17973AA400F4418D /* SAMCategoriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D9220417973AA400F4418D /* Build configuration list for PBXNativeTarget "SAMCategoriesTests" */;
+			buildPhases = (
+				21D921EA17973AA400F4418D /* Sources */,
+				21D921EB17973AA400F4418D /* Frameworks */,
+				21D921EC17973AA400F4418D /* Resources */,
+				21D921ED17973AA400F4418D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21D921F517973AA400F4418D /* PBXTargetDependency */,
+			);
+			name = SAMCategoriesTests;
+			productName = SAMCategoriesTests;
+			productReference = 21D921EF17973AA400F4418D /* SAMCategoriesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		21D9229517975BAB00F4418D /* SAMCategoriesTestsMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D922A817975BAB00F4418D /* Build configuration list for PBXNativeTarget "SAMCategoriesTestsMac" */;
+			buildPhases = (
+				21D9229117975BAB00F4418D /* Sources */,
+				21D9229217975BAB00F4418D /* Frameworks */,
+				21D9229317975BAB00F4418D /* Resources */,
+				21D9229417975BAB00F4418D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SAMCategoriesTestsMac;
+			productName = SAMCategoriesTestsMac;
+			productReference = 21D9229617975BAB00F4418D /* SAMCategoriesTestsMac.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21D921C717973AA400F4418D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SAM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Sam Soffes";
+			};
+			buildConfigurationList = 21D921CA17973AA400F4418D /* Build configuration list for PBXProject "SAMCategories" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 21D921C617973AA400F4418D;
+			productRefGroup = 21D921D017973AA400F4418D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21D921CE17973AA400F4418D /* SAMCategories */,
+				21D921EE17973AA400F4418D /* SAMCategoriesTests */,
+				21D9229517975BAB00F4418D /* SAMCategoriesTestsMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21D921CD17973AA400F4418D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2141C9E417973B5800CCD4A9 /* Default-568h@2x.png in Resources */,
+				21D922AC17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D921EC17973AA400F4418D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D922AD17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D9229317975BAB00F4418D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21D921ED17973AA400F4418D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		21D9229417975BAB00F4418D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21D921CB17973AA400F4418D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2141C9E217973B5800CCD4A9 /* SAMAppDelegate.m in Sources */,
+				2141C9E317973B5800CCD4A9 /* main.m in Sources */,
+				21D9220917973C5C00F4418D /* NSArray+SAMAdditions.m in Sources */,
+				21D9221D17973D4B00F4418D /* NSData+SAMAdditions.m in Sources */,
+				21D9221F17973D4B00F4418D /* NSDate+SAMAdditions.m in Sources */,
+				21D9222117973D4B00F4418D /* NSDictionary+SAMAdditions.m in Sources */,
+				21D9222517973D4B00F4418D /* NSNumber+SAMAdditions.m in Sources */,
+				21D9222717973D4B00F4418D /* NSString+SAMAdditions.m in Sources */,
+				21D9222917973D4B00F4418D /* NSURL+SAMAdditions.m in Sources */,
+				21D92273179748DF00F4418D /* UIApplication+SAMAdditions.m in Sources */,
+				21D92275179748DF00F4418D /* UIColor+SAMAdditions.m in Sources */,
+				21D92277179748DF00F4418D /* UIControl+SAMAdditions.m in Sources */,
+				21D92279179748DF00F4418D /* UIDevice+SAMAdditions.m in Sources */,
+				21D9227D179748DF00F4418D /* UIScreen+SAMAdditions.m in Sources */,
+				21D9227F179748DF00F4418D /* UIScrollView+SAMAdditions.m in Sources */,
+				21D92281179748DF00F4418D /* UIView+SAMAdditions.m in Sources */,
+				21D92283179748DF00F4418D /* UIViewController+SAMAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D921EA17973AA400F4418D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2141C9F517973B5D00CCD4A9 /* SAMArrayCategoryTest.m in Sources */,
+				21D9220A17973C6000F4418D /* NSArray+SAMAdditions.m in Sources */,
+				21D9221E17973D4B00F4418D /* NSData+SAMAdditions.m in Sources */,
+				21D9222017973D4B00F4418D /* NSDate+SAMAdditions.m in Sources */,
+				21D9222217973D4B00F4418D /* NSDictionary+SAMAdditions.m in Sources */,
+				21D9222617973D4B00F4418D /* NSNumber+SAMAdditions.m in Sources */,
+				21D9222817973D4B00F4418D /* NSString+SAMAdditions.m in Sources */,
+				21D9222A17973D4B00F4418D /* NSURL+SAMAdditions.m in Sources */,
+				21D922561797450B00F4418D /* SAMDataCategoryTest.m in Sources */,
+				21D922581797450B00F4418D /* SAMDateCategoryTest.m in Sources */,
+				21D9225A1797450B00F4418D /* SAMDictionaryCategoryTest.m in Sources */,
+				21D9225C1797450B00F4418D /* SAMStringCategoryTest.m in Sources */,
+				21D9225E1797450B00F4418D /* SAMURLCategoryTest.m in Sources */,
+				21D92274179748DF00F4418D /* UIApplication+SAMAdditions.m in Sources */,
+				21D92276179748DF00F4418D /* UIColor+SAMAdditions.m in Sources */,
+				21D92278179748DF00F4418D /* UIControl+SAMAdditions.m in Sources */,
+				21D9227A179748DF00F4418D /* UIDevice+SAMAdditions.m in Sources */,
+				21D9227E179748DF00F4418D /* UIScreen+SAMAdditions.m in Sources */,
+				21D92280179748DF00F4418D /* UIScrollView+SAMAdditions.m in Sources */,
+				21D92282179748DF00F4418D /* UIView+SAMAdditions.m in Sources */,
+				21D92284179748DF00F4418D /* UIViewController+SAMAdditions.m in Sources */,
+				21D9228C179758F000F4418D /* SAMColorCategoryTest.m in Sources */,
+				21D9228E179758F000F4418D /* SAMControlCategoryTest.m in Sources */,
+				21D92290179758F000F4418D /* SAMViewCategoryTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D9229117975BAB00F4418D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2103422917975CF80073E4DA /* NSArray+SAMAdditions.m in Sources */,
+				2103422A17975CF80073E4DA /* NSData+SAMAdditions.m in Sources */,
+				2103422B17975CF80073E4DA /* NSDate+SAMAdditions.m in Sources */,
+				2103422C17975CF80073E4DA /* NSDictionary+SAMAdditions.m in Sources */,
+				2103422D17975CF80073E4DA /* NSNumber+SAMAdditions.m in Sources */,
+				2103422E17975CF80073E4DA /* NSString+SAMAdditions.m in Sources */,
+				2103422F17975CF80073E4DA /* NSURL+SAMAdditions.m in Sources */,
+				2103423017975CFD0073E4DA /* SAMArrayCategoryTest.m in Sources */,
+				2103423117975CFD0073E4DA /* SAMDataCategoryTest.m in Sources */,
+				2103423217975CFD0073E4DA /* SAMDateCategoryTest.m in Sources */,
+				2103423317975CFD0073E4DA /* SAMDictionaryCategoryTest.m in Sources */,
+				2103423417975CFD0073E4DA /* SAMStringCategoryTest.m in Sources */,
+				2103423517975CFD0073E4DA /* SAMURLCategoryTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21D921F517973AA400F4418D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D921CE17973AA400F4418D /* SAMCategories */;
+			targetProxy = 21D921F417973AA400F4418D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21D921FF17973AA400F4418D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Weverything";
+			};
+			name = Debug;
+		};
+		21D9220017973AA400F4418D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Weverything";
+			};
+			name = Release;
+		};
+		21D9220217973AA400F4418D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Example/Other Sources/SAMCategories-Prefix.pch";
+				INFOPLIST_FILE = "Example/Resources/SAMCategories-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		21D9220317973AA400F4418D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Example/Other Sources/SAMCategories-Prefix.pch";
+				INFOPLIST_FILE = "Example/Resources/SAMCategories-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		21D9220517973AA400F4418D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SAMCategories.app/SAMCategories";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				INFOPLIST_FILE = "Tests/SAMCategoriesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		21D9220617973AA400F4418D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SAMCategories.app/SAMCategories";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				INFOPLIST_FILE = "Tests/SAMCategoriesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		21D922A917975BAB00F4418D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Tests/SAMCategoriesTestsMac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		21D922AA17975BAB00F4418D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Tests/SAMCategoriesTestsMac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21D921CA17973AA400F4418D /* Build configuration list for PBXProject "SAMCategories" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D921FF17973AA400F4418D /* Debug */,
+				21D9220017973AA400F4418D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D9220117973AA400F4418D /* Build configuration list for PBXNativeTarget "SAMCategories" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D9220217973AA400F4418D /* Debug */,
+				21D9220317973AA400F4418D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D9220417973AA400F4418D /* Build configuration list for PBXNativeTarget "SAMCategoriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D9220517973AA400F4418D /* Debug */,
+				21D9220617973AA400F4418D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D922A817975BAB00F4418D /* Build configuration list for PBXNativeTarget "SAMCategoriesTestsMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D922A917975BAB00F4418D /* Debug */,
+				21D922AA17975BAB00F4418D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21D921C717973AA400F4418D /* Project object */;
+}
