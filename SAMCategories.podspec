@@ -8,8 +8,9 @@ Pod::Spec.new do |spec|
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
 
   spec.requires_arc = true
-  spec.resources = 'SAMCategories/Resources'
-  spec.preserve_paths = 'SAMCategories/Resources'
+
+  # TODO: Figure out how to support multiple languages
+  spec.resources = 'SAMCategories/Strings/en.lproj/*.strings'
 
   spec.ios.frameworks = 'UIKit', 'CoreGraphics', 'QuartzCore'
   spec.ios.source_files = 'SAMCategories/**/*.{h,m}'

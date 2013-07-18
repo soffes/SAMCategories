@@ -24,9 +24,9 @@
 		2141C9E317973B5800CCD4A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141C9DD17973B5800CCD4A9 /* main.m */; };
 		2141C9E417973B5800CCD4A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2141C9E017973B5800CCD4A9 /* Default-568h@2x.png */; };
 		2141C9F517973B5D00CCD4A9 /* SAMArrayCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141C9E817973B5D00CCD4A9 /* SAMArrayCategoryTest.m */; };
-		21BA4AC0179781B400E309A3 /* SAMCategories.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21BA4AAF179781B400E309A3 /* SAMCategories.strings */; };
-		21BA4AC1179781B400E309A3 /* SAMCategories.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21BA4AAF179781B400E309A3 /* SAMCategories.strings */; };
-		21BA4AC2179781B400E309A3 /* SAMCategories.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21BA4AAF179781B400E309A3 /* SAMCategories.strings */; };
+		2192E62817984FAD00263579 /* SAMCategories.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2192E61717984FAD00263579 /* SAMCategories.strings */; };
+		2192E62917984FAD00263579 /* SAMCategories.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2192E61717984FAD00263579 /* SAMCategories.strings */; };
+		2192E62A17984FAD00263579 /* SAMCategories.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2192E61717984FAD00263579 /* SAMCategories.strings */; };
 		21D921D317973AA400F4418D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D217973AA400F4418D /* UIKit.framework */; };
 		21D921D517973AA400F4418D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D417973AA400F4418D /* Foundation.framework */; };
 		21D921D717973AA400F4418D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D921D617973AA400F4418D /* CoreGraphics.framework */; };
@@ -97,22 +97,22 @@
 		2141C9E117973B5800CCD4A9 /* SAMCategories-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAMCategories-Info.plist"; sourceTree = "<group>"; };
 		2141C9E817973B5D00CCD4A9 /* SAMArrayCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMArrayCategoryTest.m; sourceTree = "<group>"; };
 		2141C9EE17973B5D00CCD4A9 /* SAMCategoriesTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAMCategoriesTests-Info.plist"; sourceTree = "<group>"; };
-		21BA4AB0179781B400E309A3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB1179781B400E309A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB2179781B400E309A3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB3179781B400E309A3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB4179781B400E309A3 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB5179781B400E309A3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB6179781B400E309A3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB7179781B400E309A3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB8179781B400E309A3 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4AB9179781B400E309A3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4ABA179781B400E309A3 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4ABB179781B400E309A3 /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = pt_PT.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4ABC179781B400E309A3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4ABD179781B400E309A3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4ABE179781B400E309A3 /* zh_Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_Hans; path = zh_Hans.lproj/SAMCategories.strings; sourceTree = "<group>"; };
-		21BA4ABF179781B400E309A3 /* zh_Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_Hant; path = zh_Hant.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61817984FAD00263579 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61917984FAD00263579 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61A17984FAD00263579 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61B17984FAD00263579 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61C17984FAD00263579 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61D17984FAD00263579 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61E17984FAD00263579 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E61F17984FAD00263579 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62017984FAD00263579 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62117984FAD00263579 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62217984FAD00263579 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62317984FAD00263579 /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = pt_PT.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62417984FAD00263579 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62517984FAD00263579 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62617984FAD00263579 /* zh_Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_Hans; path = zh_Hans.lproj/SAMCategories.strings; sourceTree = "<group>"; };
+		2192E62717984FAD00263579 /* zh_Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_Hant; path = zh_Hant.lproj/SAMCategories.strings; sourceTree = "<group>"; };
 		21D921CF17973AA400F4418D /* SAMCategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAMCategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D921D217973AA400F4418D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D921D417973AA400F4418D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -206,7 +206,7 @@
 				21D922851797556200F4418D /* SAMCategories.h */,
 				2141C98E17973B5300CCD4A9 /* Foundation */,
 				21D92260179748DF00F4418D /* UIKit */,
-				21BA4AAE179781B400E309A3 /* Resources */,
+				2192E61617984FAD00263579 /* Strings */,
 			);
 			path = SAMCategories;
 			sourceTree = "<group>";
@@ -293,12 +293,12 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		21BA4AAE179781B400E309A3 /* Resources */ = {
+		2192E61617984FAD00263579 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				21BA4AAF179781B400E309A3 /* SAMCategories.strings */,
+				2192E61717984FAD00263579 /* SAMCategories.strings */,
 			);
-			path = Resources;
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		21D921C617973AA400F4418D = {
@@ -486,7 +486,7 @@
 			files = (
 				2141C9E417973B5800CCD4A9 /* Default-568h@2x.png in Resources */,
 				21D922AC17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist in Resources */,
-				21BA4AC0179781B400E309A3 /* SAMCategories.strings in Resources */,
+				2192E62817984FAD00263579 /* SAMCategories.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D922AD17975C4000F4418D /* SAMCategoriesTestsMac-Info.plist in Resources */,
-				21BA4AC1179781B400E309A3 /* SAMCategories.strings in Resources */,
+				2192E62917984FAD00263579 /* SAMCategories.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21BA4AC2179781B400E309A3 /* SAMCategories.strings in Resources */,
+				2192E62A17984FAD00263579 /* SAMCategories.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,25 +625,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		21BA4AAF179781B400E309A3 /* SAMCategories.strings */ = {
+		2192E61717984FAD00263579 /* SAMCategories.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				21BA4AB0179781B400E309A3 /* de */,
-				21BA4AB1179781B400E309A3 /* en */,
-				21BA4AB2179781B400E309A3 /* es */,
-				21BA4AB3179781B400E309A3 /* fr */,
-				21BA4AB4179781B400E309A3 /* id */,
-				21BA4AB5179781B400E309A3 /* it */,
-				21BA4AB6179781B400E309A3 /* ja */,
-				21BA4AB7179781B400E309A3 /* ko */,
-				21BA4AB8179781B400E309A3 /* ms */,
-				21BA4AB9179781B400E309A3 /* nl */,
-				21BA4ABA179781B400E309A3 /* pt */,
-				21BA4ABB179781B400E309A3 /* pt_PT */,
-				21BA4ABC179781B400E309A3 /* ru */,
-				21BA4ABD179781B400E309A3 /* sv */,
-				21BA4ABE179781B400E309A3 /* zh_Hans */,
-				21BA4ABF179781B400E309A3 /* zh_Hant */,
+				2192E61817984FAD00263579 /* de */,
+				2192E61917984FAD00263579 /* en */,
+				2192E61A17984FAD00263579 /* es */,
+				2192E61B17984FAD00263579 /* fr */,
+				2192E61C17984FAD00263579 /* id */,
+				2192E61D17984FAD00263579 /* it */,
+				2192E61E17984FAD00263579 /* ja */,
+				2192E61F17984FAD00263579 /* ko */,
+				2192E62017984FAD00263579 /* ms */,
+				2192E62117984FAD00263579 /* nl */,
+				2192E62217984FAD00263579 /* pt */,
+				2192E62317984FAD00263579 /* pt_PT */,
+				2192E62417984FAD00263579 /* ru */,
+				2192E62517984FAD00263579 /* sv */,
+				2192E62617984FAD00263579 /* zh_Hans */,
+				2192E62717984FAD00263579 /* zh_Hant */,
 			);
 			name = SAMCategories.strings;
 			sourceTree = "<group>";
