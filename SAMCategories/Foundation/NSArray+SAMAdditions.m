@@ -20,7 +20,7 @@
 	    return nil;
 	}
 	
-	return [self objectAtIndex:arc4random_uniform([self count])];
+	return [self objectAtIndex:arc4random_uniform((u_int32_t)[self count])];
 }
 
 
@@ -61,7 +61,7 @@
 
 - (void)sam_shuffle {
 	for (NSInteger i = [self count] - 1; i > 0; i--) {
-		[self exchangeObjectAtIndex:arc4random_uniform(i + 1) withObjectAtIndex:i];
+		[self exchangeObjectAtIndex:arc4random_uniform((u_int32_t)i + 1) withObjectAtIndex:i];
 	}
 }
 
