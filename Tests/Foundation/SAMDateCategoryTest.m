@@ -28,6 +28,10 @@
 	date = [NSDate dateWithTimeIntervalSince1970:1323818220];
 	string = @"2011-12-13T17:17:00-06:00";
 	STAssertEqualObjects(date, [NSDate sam_dateFromISO8601String:string], nil);
+
+	date = [NSDate dateWithTimeIntervalSince1970:1372347572];
+	string = @"2013-06-27T15:39:32.508Z";
+	STAssertEqualObjects(date, [NSDate sam_dateFromISO8601String:string], nil);
 }
 
 

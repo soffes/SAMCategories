@@ -10,62 +10,76 @@
 #include <time.h>
 #include <xlocale.h>
 
-#define ISO8601_MAX_LEN 25
 #define SAMCategoriesLocalizedString(key) NSLocalizedStringFromTable((key), @"SAMCategories", nil)
 
 @implementation NSDate (SAMAdditions)
 
 + (NSDate *)sam_dateFromISO8601String:(NSString *)iso8601 {
-	if (!iso8601) {
-        return nil;
-    }
-	
-    const char *str = [iso8601 cStringUsingEncoding:NSUTF8StringEncoding];
-    char newStr[ISO8601_MAX_LEN];
-    bzero(newStr, ISO8601_MAX_LEN);
-	
-    size_t len = strlen(str);
-    if (len == 0) {
-        return nil;
-    }
-	
-    // UTC dates ending with Z
-    if (len == 20 && str[len - 1] == 'Z') {
-        memcpy(newStr, str, len - 1);
-	strncpy(newStr + len - 1, "+0000\0", 6);
-    }
-	
-    // Timezone includes a semicolon (not supported by strptime)
-    else if (len == 25 && str[22] == ':') { 
-        memcpy(newStr, str, 22);    
-        memcpy(newStr + 22, str + 23, 2);
-    }
-	
-    // Fallback: date was already well-formatted OR any other case (bad-formatted)
-    else { 
-        memcpy(newStr, str, len > ISO8601_MAX_LEN - 1 ? ISO8601_MAX_LEN - 1 : len);	
-    }
-	
-  // Add null terminator
-  newStr[sizeof(newStr) - 1] = 0;
-  
-    struct tm tm = {
-        .tm_sec = 0,
-        .tm_min = 0,
-        .tm_hour = 0,
-        .tm_mday = 0,
-        .tm_mon = 0,
-        .tm_year = 0,
-        .tm_wday = 0,
-        .tm_yday = 0,
-        .tm_isdst = -1,
-    };
-	
-    if (strptime_l(newStr, "%FT%T%z", &tm, NULL) == NULL) {
-        return nil;
-    }
+	// Return nil if nil is given
+	if (!iso8601 || [iso8601 isEqual:[NSNull null]]) {
+		return nil;
+	}
 
-    return [NSDate dateWithTimeIntervalSince1970:mktime(&tm)];
+	// Parse number
+	if ([iso8601 isKindOfClass:[NSNumber class]]) {
+		return [NSDate dateWithTimeIntervalSince1970:[(NSNumber *)iso8601 doubleValue]];
+	}
+
+	// Parse string
+	else if ([iso8601 isKindOfClass:[NSString class]]) {
+		// ISO8601 Parser borrowed from SSToolkit. http://sstoolk.it
+		if (!iso8601) {
+			return nil;
+		}
+
+		const char *str = [iso8601 cStringUsingEncoding:NSUTF8StringEncoding];
+		char newStr[25];
+
+		struct tm tm;
+		size_t len = strlen(str);
+		if (len == 0) {
+			return nil;
+		}
+
+		// UTC
+		if (len == 20 && str[len - 1] == 'Z') {
+			strncpy(newStr, str, len - 1);
+			strncpy(newStr + len - 1, "+0000", 5);
+		}
+
+		//Milliseconds parsing
+		else if (len == 24 && str[len - 1] == 'Z') {
+			strncpy(newStr, str, len - 1);
+			strncpy(newStr, str, len - 5);
+			strncpy(newStr + len - 5, "+0000", 5);
+		}
+
+		// Timezone
+		else if (len == 25 && str[22] == ':') {
+			strncpy(newStr, str, 22);
+			strncpy(newStr + 22, str + 23, 2);
+		}
+
+		// Poorly formatted timezone
+		else {
+			strncpy(newStr, str, len > 24 ? 24 : len);
+		}
+
+		// Add null terminator
+		newStr[sizeof(newStr) - 1] = 0;
+
+		if (strptime(newStr, "%FT%T%z", &tm) == NULL) {
+			return nil;
+		}
+
+		time_t t;
+		t = mktime(&tm);
+
+		return [NSDate dateWithTimeIntervalSince1970:t];
+	}
+
+	NSAssert1(NO, @"Failed to parse date: %@", iso8601);
+	return nil;
 }
 
 
