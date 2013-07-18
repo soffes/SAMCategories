@@ -8,7 +8,6 @@
 
 #import "NSString+SAMAdditions.h"
 #import "NSData+SAMAdditions.h"
-#import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (SAMAdditions)
 

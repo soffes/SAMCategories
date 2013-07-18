@@ -7,8 +7,8 @@
 //
 
 #import "NSDictionary+SAMAdditions.h"
-#import "NSString+SAMAdditions.h"
 #import "NSData+SAMAdditions.h"
+#import "NSString+SAMAdditions.h"
 
 @interface NSDictionary (SAMPrivateAdditions)
 - (NSData *)sam_prehashData;
