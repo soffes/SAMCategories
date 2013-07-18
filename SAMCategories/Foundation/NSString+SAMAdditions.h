@@ -103,8 +103,8 @@
 /**
  Returns a new string escaped for a URL query parameter.
  
- The following characters are escaped: `\n\r:/=,!$&'()*+;[]@#?%`. Spaces are escaped to the `+` character. (`+` is
- escaped to `%2B`).
+ The following characters are escaped: `:/=,!$&'()*+;[]@#?%` as well as new lines. Spaces are escaped to the `+`
+ character. (`+` is escaped to `%2B`).
  
  @return A new string escaped for a URL query parameter.
  

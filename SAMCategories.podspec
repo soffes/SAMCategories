@@ -8,7 +8,6 @@ Pod::Spec.new do |spec|
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
 
   spec.requires_arc = true
-  spec.frameworks = 'Foundation', 'CommonCrypto'
   spec.resources = 'Resources'
   spec.preserve_paths = 'Resources'
 

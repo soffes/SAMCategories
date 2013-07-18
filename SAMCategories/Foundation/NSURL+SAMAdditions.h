@@ -26,10 +26,8 @@
  for a list of format specifiers. This value must not be `nil`.
  
  @return An NSURL object initialized with URLString. If the string was malformed, returns nil.
- 
- @exception NSInvalidArgumentException Thrown if `format` is `nil`.
  */
-+ (id)sam_URLWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
++ (id)sam_URLWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1, 2);
 
 /**
  Returns a new dictionary that contains a dictionary for the receivers query string.
