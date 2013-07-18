@@ -15,7 +15,7 @@
 #import "NSString+SAMAdditions.h"
 #import "NSURL+SAMAdditions.h"
 
-// iOS
+// UIKit
 #if TARGET_OS_IPHONE
 	#import "UIApplication+SAMAdditions.h"
 	#import "UIColor+SAMAdditions.h"
