@@ -9,7 +9,11 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
   spec.frameworks = 'Foundation', 'CommonCrypto'
+  spec.resources = 'Resources'
+  spec.preserve_paths = 'Resources'
+
   spec.ios.frameworks = 'UIKit', 'CoreGraphics', 'QuartzCore'
   spec.ios.source_files = 'SAMCategories/**/*.{h,m}'
+
   spec.osx.source_files = 'SAMCategories/Foundation/*.{h,m}'
 end

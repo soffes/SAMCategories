@@ -33,4 +33,63 @@
  */
 - (NSString *)sam_ISO8601String;
 
+
+///--------------------
+/// @name Time In Words
+///--------------------
+
+/**
+ Returns a string representing the time interval from now in words (including seconds).
+
+ The strings produced by this method will be similar to produced by Twitter for iPhone or Tweetbot in the top right of
+ the tweet cells.
+
+ Internally, this does not use `timeInWordsFromTimeInterval:includingSeconds:`.
+
+ @return A string representing the time interval from now in words
+ */
+- (NSString *)sam_briefTimeInWords;
+
+/**
+ Returns a string representing the time interval from now in words (including seconds).
+
+ The strings produced by this method will be similar to produced by ActiveSupport's `time_ago_in_words` helper method.
+
+ @return A string representing the time interval from now in words
+
+ @see timeInWordsIncludingSeconds:
+ @see timeInWordsFromTimeInterval:includingSeconds:
+ */
+- (NSString *)sam_timeInWords;
+
+/**
+ Returns a string representing the time interval from now in words.
+
+ The strings produced by this method will be similar to produced by ActiveSupport's `time_ago_in_words` helper method.
+
+ @param includeSeconds `YES` if seconds should be included. `NO` if they should not.
+
+ @return A string representing the time interval from now in words
+
+ @see timeInWordsIncludingSeconds:
+ @see timeInWordsFromTimeInterval:includingSeconds:
+ */
+- (NSString *)sam_timeInWordsIncludingSeconds:(BOOL)includeSeconds;
+
+/**
+ Returns a string representing a time interval in words.
+
+ The strings produced by this method will be similar to produced by ActiveSupport's `time_ago_in_words` helper method.
+
+ @param intervalInSeconds The time interval to convert to a string
+
+ @param includeSeconds `YES` if seconds should be included. `NO` if they should not.
+
+ @return A string representing the time interval in words
+
+ @see timeInWords
+ @see timeInWordsIncludingSeconds:
+ */
++ (NSString *)sam_timeInWordsFromTimeInterval:(NSTimeInterval)intervalInSeconds includingSeconds:(BOOL)includeSeconds;
+
 @end
