@@ -10,7 +10,8 @@
 #include <time.h>
 #include <xlocale.h>
 
-#define SAMCategoriesLocalizedString(key) NSLocalizedStringFromTable((key), @"SAMCategories", nil)
+#define SAMCategoriesBundle [NSBundle bundleWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SAMCategories.bundle"]]
+#define SAMCategoriesLocalizedString(key)  NSLocalizedStringFromTableInBundle((key), @"SAMCategories", SAMCategoriesBundle, nil)
 
 @implementation NSDate (SAMAdditions)
 
@@ -27,7 +28,6 @@
 
 	// Parse string
 	else if ([iso8601 isKindOfClass:[NSString class]]) {
-		// ISO8601 Parser borrowed from SSToolkit. http://sstoolk.it
 		if (!iso8601) {
 			return nil;
 		}

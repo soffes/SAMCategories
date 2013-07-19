@@ -8,6 +8,7 @@
 
 #import "SAMAppDelegate.h"
 #import "NSArray+SAMAdditions.h"
+#import "NSDate+SAMAdditions.h"
 
 @implementation SAMAppDelegate
 
@@ -20,6 +21,10 @@
 
 	NSArray *message = @[@"Nothing", @"to", @"see", @"here"];
 	NSLog(@"%@", [message sam_shuffledArray]);
+	NSLog(@"Now: %@", [[NSDate date] sam_timeInWords]);
+
+	NSBundle *bundle = [NSBundle bundleWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SAMCategories.bundle"]];
+	NSLog(@"%@", NSLocalizedStringFromTableInBundle(@"less than %d seconds", @"SAMCategories", bundle, nil));
 
 	return YES;
 }
