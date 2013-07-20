@@ -9,31 +9,53 @@
 #import "NSString+SAMAdditions.h"
 #import "NSData+SAMAdditions.h"
 
+@interface NSString (SAMPrivateAdditions)
+- (NSData *)sam_prehashData;
+@end
+
 @implementation NSString (SAMAdditions)
 
 - (BOOL)sam_containsString:(NSString *)string {
 	return !NSEqualRanges([self rangeOfString:string], NSMakeRange(NSNotFound, 0));
 }
 
+- (NSString *)sam_MD2Sum {
+	return [[self sam_prehashData] sam_MD2Sum];
+}
+
+
+- (NSString *)sam_MD4Sum {
+	return [[self sam_prehashData] sam_MD4Sum];
+}
+
+
+- (NSString *)sam_SHA224Sum {
+	return [[self sam_prehashData] sam_SHA224Sum];
+}
+
+
+- (NSString *)sam_SHA384Sum {
+	return [[self sam_prehashData] sam_SHA384Sum];
+}
+
+
+- (NSString *)sam_SHA512Sum {
+	return [[self sam_prehashData] sam_SHA512Sum];
+}
+
 
 - (NSString *)sam_MD5Sum {
-	const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
-	NSData *data = [NSData dataWithBytes:cstr length:self.length];
-	return [data sam_MD5Sum];
+	return [[self sam_prehashData] sam_MD5Sum];
 }
 
 
 - (NSString *)sam_SHA1Sum {
-	const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
-	NSData *data = [NSData dataWithBytes:cstr length:self.length];
-	return [data sam_SHA1Sum];
+	return [[self sam_prehashData] sam_SHA1Sum];
 }
 
 
 - (NSString *)sam_SHA256Sum {
-	const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
-	NSData *data = [NSData dataWithBytes:cstr length:self.length];
-	return [data sam_SHA256Sum];
+	return [[self sam_prehashData] sam_SHA256Sum];
 }
 
 
@@ -208,6 +230,16 @@
 	CFStringRef string = CFUUIDCreateString(NULL, uuid);
 	CFRelease(uuid);
 	return (__bridge_transfer NSString *)string;
+}
+
+@end
+
+
+@implementation NSString (SAMPrivateAdditions)
+
+- (NSData *)sam_prehashData {
+	const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
+	return [NSData dataWithBytes:cstr length:self.length];
 }
 
 @end

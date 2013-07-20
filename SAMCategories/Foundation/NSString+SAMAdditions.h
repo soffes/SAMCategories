@@ -28,8 +28,22 @@
 
 
 ///--------------
-/// @name Hashing
+/// @name Digests
 ///--------------
+
+/**
+ Returns a string of the MD2 sum of the receiver.
+
+ @return The string of the MD2 sum of the receiver.
+ */
+- (NSString *)sam_MD2Sum;
+
+/**
+ Returns a string of the MD4 sum of the receiver.
+
+ @return The string of the MD4 sum of the receiver.
+ */
+- (NSString *)sam_MD4Sum;
 
 /**
  Returns a string of the MD5 sum of the receiver.
@@ -46,11 +60,32 @@
 - (NSString *)sam_SHA1Sum;
 
 /**
+ Returns a string of the SHA224 sum of the receiver.
+
+ @return The string of the SHA224 sum of the receiver.
+ */
+- (NSString *)sam_SHA224Sum;
+
+/**
  Returns a string of the SHA256 sum of the receiver.
  
  @return The string of the SHA256 sum of the receiver.
  */
 - (NSString *)sam_SHA256Sum;
+
+/**
+ Returns a string of the SHA384 sum of the receiver.
+
+ @return The string of the SHA384 sum of the receiver.
+ */
+- (NSString *)sam_SHA384Sum;
+
+/**
+ Returns a string of the SHA512 sum of the receiver.
+
+ @return The string of the SHA512 sum of the receiver.
+ */
+- (NSString *)sam_SHA512Sum;
 
 
 ///-------------------------

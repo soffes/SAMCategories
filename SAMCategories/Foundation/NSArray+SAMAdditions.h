@@ -52,6 +52,26 @@
 ///--------------
 
 /**
+ Returns a string of the MD2 sum of the receiver.
+
+ @return The string of the MD2 sum of the receiver.
+
+ Internally, `NSPropertyListSerialization` is used to created the hash. Only objects that can be serialized should be
+ contained in the receiver when calling this method.
+ */
+- (NSString *)sam_MD2Sum;
+
+/**
+ Returns a string of the MD4 sum of the receiver.
+
+ @return The string of the MD4 sum of the receiver.
+
+ Internally, `NSPropertyListSerialization` is used to created the hash. Only objects that can be serialized should be
+ contained in the receiver when calling this method.
+ */
+- (NSString *)sam_MD4Sum;
+
+/**
  Returns a string of the MD5 sum of the receiver.
  
  @return The string of the MD5 sum of the receiver.
@@ -70,6 +90,46 @@
  contained in the receiver when calling this method.
  */
 - (NSString *)sam_SHA1Sum;
+
+/**
+ Returns a string of the SHA224 sum of the receiver.
+
+ @return The string of the SHA224 sum of the receiver.
+
+ Internally, `NSPropertyListSerialization` is used to created the hash. Only objects that can be serialized should be
+ contained in the receiver when calling this method.
+ */
+- (NSString *)sam_SHA224Sum;
+
+/**
+ Returns a string of the SHA256 sum of the receiver.
+
+ @return The string of the SHA256 sum of the receiver.
+
+ Internally, `NSPropertyListSerialization` is used to created the hash. Only objects that can be serialized should be
+ contained in the receiver when calling this method.
+ */
+- (NSString *)sam_SHA256Sum;
+
+/**
+ Returns a string of the SHA384 sum of the receiver.
+
+ @return The string of the SHA384 sum of the receiver.
+
+ Internally, `NSPropertyListSerialization` is used to created the hash. Only objects that can be serialized should be
+ contained in the receiver when calling this method.
+ */
+- (NSString *)sam_SHA384Sum;
+
+/**
+ Returns a string of the SHA512 sum of the receiver.
+
+ @return The string of the SHA512 sum of the receiver.
+
+ Internally, `NSPropertyListSerialization` is used to created the hash. Only objects that can be serialized should be
+ contained in the receiver when calling this method.
+ */
+- (NSString *)sam_SHA512Sum;
 
 @end
 

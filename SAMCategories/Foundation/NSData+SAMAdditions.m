@@ -9,6 +9,10 @@
 #import "NSData+SAMAdditions.h"
 #include <CommonCrypto/CommonDigest.h>
 
+@interface NSData (SAMPrivateAdditions)
++ (NSString *)sam_stringFromDigest:(uint8_t *)digest length:(int)length;
+@end
+
 @implementation NSData (SAMAdditions)
 
 static const char sam_base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -31,36 +35,59 @@ static const short sam_base64DecodingTable[256] = {
 	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2
 };
 
+- (NSString *)sam_MD2Sum {
+	uint8_t digest[CC_MD2_DIGEST_LENGTH];
+	CC_MD2(self.bytes, (CC_LONG)self.length, digest);
+	return [[self class] sam_stringFromDigest:digest length:CC_MD2_DIGEST_LENGTH];
+}
+
+
+- (NSString *)sam_MD4Sum {
+	uint8_t digest[CC_MD4_DIGEST_LENGTH];
+	CC_MD4(self.bytes, (CC_LONG)self.length, digest);
+	return [[self class] sam_stringFromDigest:digest length:CC_MD4_DIGEST_LENGTH];
+}
+
+
 - (NSString *)sam_MD5Sum {
-	unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
+	uint8_t digest[CC_MD5_DIGEST_LENGTH];
 	CC_MD5(self.bytes, (CC_LONG)self.length, digest);
-	NSMutableString *ms = [NSMutableString string];
-	for (i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-		[ms appendFormat: @"%02x", (int)(digest[i])];
-	}
-	return [ms copy];
+	return [[self class] sam_stringFromDigest:digest length:CC_MD5_DIGEST_LENGTH];
 }
 
 
 - (NSString *)sam_SHA1Sum {
-	NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
 	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 	CC_SHA1(self.bytes, (CC_LONG)self.length, digest);
-	for (NSInteger i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
-		[output appendFormat:@"%02x", digest[i]];
-	}
-	return output;
+	return [[self class] sam_stringFromDigest:digest length:CC_SHA1_DIGEST_LENGTH];
+}
+
+
+- (NSString *)sam_SHA224Sum {
+	uint8_t digest[CC_SHA224_DIGEST_LENGTH];
+	CC_SHA224(self.bytes, (CC_LONG)self.length, digest);
+	return [[self class] sam_stringFromDigest:digest length:CC_SHA224_DIGEST_LENGTH];
 }
 
 
 - (NSString *)sam_SHA256Sum {
-    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
 	uint8_t digest[CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256([self bytes], (CC_LONG)[self length], digest);
-	for (NSInteger i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
-		[output appendFormat:@"%02x", digest[i]];
-	}
-	return output;
+	CC_SHA256(self.bytes, (CC_LONG)self.length, digest);
+	return [[self class] sam_stringFromDigest:digest length:CC_SHA256_DIGEST_LENGTH];
+}
+
+
+- (NSString *)sam_SHA384Sum {
+	uint8_t digest[CC_SHA384_DIGEST_LENGTH];
+	CC_SHA384(self.bytes, (CC_LONG)self.length, digest);
+	return [[self class] sam_stringFromDigest:digest length:CC_SHA384_DIGEST_LENGTH];
+}
+
+
+- (NSString *)sam_SHA512Sum {
+	uint8_t digest[CC_SHA512_DIGEST_LENGTH];
+	CC_SHA512(self.bytes, (CC_LONG)self.length, digest);
+	return [[self class] sam_stringFromDigest:digest length:CC_SHA512_DIGEST_LENGTH];
 }
 
 
@@ -128,6 +155,19 @@ static const short sam_base64DecodingTable[256] = {
 	}
 	
 	return data;
+}
+
+@end
+
+
+@implementation NSData (SAMPrivateAdditions)
+
++ (NSString *)sam_stringFromDigest:(uint8_t *)digest length:(int)length {
+	NSMutableString *ms = [[NSMutableString alloc] initWithCapacity:length * 2];
+	for (int i = 0; i < length; i++) {
+		[ms appendFormat: @"%02x", (int)digest[i]];
+	}
+	return [ms copy];
 }
 
 @end

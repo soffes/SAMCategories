@@ -36,6 +36,31 @@
 }
 
 
+- (NSString *)sam_MD2Sum {
+	return [[self sam_prehashData] sam_MD2Sum];
+}
+
+
+- (NSString *)sam_MD4Sum {
+	return [[self sam_prehashData] sam_MD4Sum];
+}
+
+
+- (NSString *)sam_SHA224Sum {
+	return [[self sam_prehashData] sam_SHA224Sum];
+}
+
+
+- (NSString *)sam_SHA384Sum {
+	return [[self sam_prehashData] sam_SHA384Sum];
+}
+
+
+- (NSString *)sam_SHA512Sum {
+	return [[self sam_prehashData] sam_SHA512Sum];
+}
+
+
 - (NSString *)sam_MD5Sum {
 	return [[self sam_prehashData] sam_MD5Sum];
 }
@@ -43,6 +68,11 @@
 
 - (NSString *)sam_SHA1Sum {
 	return [[self sam_prehashData] sam_SHA1Sum];
+}
+
+
+- (NSString *)sam_SHA256Sum {
+	return [[self sam_prehashData] sam_SHA256Sum];
 }
 
 @end
