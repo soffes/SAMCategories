@@ -96,7 +96,11 @@
 		}
 	}
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wvla"
     unsigned char digest[length];
+#pragma clang diagnostic pop
+	
     CCHmac(algorithm, cKey, strlen(cKey), cData, strlen(cData), digest);
 
     NSMutableString *string = [[NSMutableString alloc] initWithCapacity:length * 2];
