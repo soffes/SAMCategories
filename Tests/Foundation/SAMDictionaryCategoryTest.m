@@ -34,7 +34,7 @@
 }
 
 
-- (void)testMD5Sum {
+- (void)testMD5Digest {
 	NSDictionary *dictionary1 = [NSDictionary dictionaryWithObjectsAndKeys:
 								 @"value1", @"key1",
 								 @"value2", @"key2",
@@ -51,15 +51,15 @@
 										nil];
 	[dictionary2 setObject:@"value2" forKey:@"key2"];
 	
-	NSString *sum1 = [dictionary1 sam_MD5Sum];
-	NSString *sum2 = [dictionary2 sam_MD5Sum];
-	STAssertNotNil(sum1, nil);
-	STAssertNotNil(sum2, nil);
-	STAssertEqualObjects(sum1, sum2, nil);
+	NSString *digest1 = [dictionary1 sam_MD5Digest];
+	NSString *digest2 = [dictionary2 sam_MD5Digest];
+	STAssertNotNil(digest1, nil);
+	STAssertNotNil(digest2, nil);
+	STAssertEqualObjects(digest1, digest2, nil);
 }
 
 
-- (void)testSHA1Sum {
+- (void)testSHA1Digest {
 	NSDictionary *dictionary1 = [NSDictionary dictionaryWithObjectsAndKeys:
 								 @"value1", @"key1",
 								 @"value2", @"key2",
@@ -76,11 +76,11 @@
 										nil];
 	[dictionary2 setObject:@"value2" forKey:@"key2"];
 	
-	NSString *sum1 = [dictionary1 sam_SHA1Sum];
-	NSString *sum2 = [dictionary2 sam_SHA1Sum];
-	STAssertNotNil(sum1, nil);
-	STAssertNotNil(sum2, nil);
-	STAssertEqualObjects(sum1, sum2, nil);
+	NSString *digest1 = [dictionary1 sam_SHA1Digest];
+	NSString *digest2 = [dictionary2 sam_SHA1Digest];
+	STAssertNotNil(digest1, nil);
+	STAssertNotNil(digest2, nil);
+	STAssertEqualObjects(digest1, digest2, nil);
 }
 
 @end

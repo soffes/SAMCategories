@@ -35,56 +35,56 @@ static const short sam_base64DecodingTable[256] = {
 	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2
 };
 
-- (NSString *)sam_MD2Sum {
+- (NSString *)sam_MD2Digest {
 	uint8_t digest[CC_MD2_DIGEST_LENGTH];
 	CC_MD2(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_MD2_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_MD4Sum {
+- (NSString *)sam_MD4Digest {
 	uint8_t digest[CC_MD4_DIGEST_LENGTH];
 	CC_MD4(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_MD4_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_MD5Sum {
+- (NSString *)sam_MD5Digest {
 	uint8_t digest[CC_MD5_DIGEST_LENGTH];
 	CC_MD5(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_MD5_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_SHA1Sum {
+- (NSString *)sam_SHA1Digest {
 	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 	CC_SHA1(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_SHA1_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_SHA224Sum {
+- (NSString *)sam_SHA224Digest {
 	uint8_t digest[CC_SHA224_DIGEST_LENGTH];
 	CC_SHA224(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_SHA224_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_SHA256Sum {
+- (NSString *)sam_SHA256Digest {
 	uint8_t digest[CC_SHA256_DIGEST_LENGTH];
 	CC_SHA256(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_SHA256_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_SHA384Sum {
+- (NSString *)sam_SHA384Digest {
 	uint8_t digest[CC_SHA384_DIGEST_LENGTH];
 	CC_SHA384(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_SHA384_DIGEST_LENGTH];
 }
 
 
-- (NSString *)sam_SHA512Sum {
+- (NSString *)sam_SHA512Digest {
 	uint8_t digest[CC_SHA512_DIGEST_LENGTH];
 	CC_SHA512(self.bytes, (CC_LONG)self.length, digest);
 	return [[self class] sam_stringFromDigest:digest length:CC_SHA512_DIGEST_LENGTH];
