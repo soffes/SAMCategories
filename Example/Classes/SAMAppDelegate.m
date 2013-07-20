@@ -7,24 +7,23 @@
 //
 
 #import "SAMAppDelegate.h"
-#import "NSArray+SAMAdditions.h"
-#import "NSDate+SAMAdditions.h"
+#import "SAMCategories.h"
 
 @implementation SAMAppDelegate
 
 @synthesize window = _window;
 
+// Nothing to see here yet.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.backgroundColor = [UIColor whiteColor];
 	[self.window makeKeyAndVisible];
 
-	NSArray *message = @[@"Nothing", @"to", @"see", @"here"];
-	NSLog(@"%@", [message sam_shuffledArray]);
-	NSLog(@"Now: %@", [[NSDate date] sam_timeInWords]);
+	NSString *message = @"Super secret stuff.";
+	NSString *key = @"AwesomeKey";
 
-	NSBundle *bundle = [NSBundle bundleWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SAMCategories.bundle"]];
-	NSLog(@"%@", NSLocalizedStringFromTableInBundle(@"less than %d seconds", @"SAMCategories", bundle, nil));
+	NSData *encrypted = [[message dataUsingEncoding:NSUTF8StringEncoding] sam_encryptWithKey:key algorithm:kCCAlgorithmAES128 options:kNilOptions error:nil];
+	NSLog(@"Encrypted: %@ \n\n %@", encrypted, [encrypted sam_base64EncodedString]);
 
 	return YES;
 }

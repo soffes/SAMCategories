@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonHMAC.h>
+#import <CommonCrypto/CommonCrypto.h>
 
 /**
  Provides extensions to `NSString` for various common tasks.
@@ -96,6 +96,13 @@
  @return The string of the HMAC digest of the receiver.
  */
 - (NSString *)sam_HMACDigestWithKey:(NSString *)key algorithm:(CCHmacAlgorithm)algorithm;
+
+
+///-----------------
+/// @name Encryption
+///-----------------
+
+- (NSString *)sam_encryptWithKey:(NSString *)key algorithm:(CCAlgorithm)algorithm options:(CCOptions)options error:(NSError *__autoreleasing *)error;
 
 
 ///-------------------------

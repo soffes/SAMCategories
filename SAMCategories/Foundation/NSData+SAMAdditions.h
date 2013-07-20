@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonCryptor.h>
 
 /**
  Provides extensions to `NSData` for various common tasks.
@@ -72,6 +73,13 @@
  @return The string of the SHA512 digest of the receiver.
  */
 - (NSString *)sam_SHA512Digest;
+
+
+///-----------------
+/// @name Encryption
+///-----------------
+
+- (NSData *)sam_encryptWithKey:(NSString *)key algorithm:(CCAlgorithm)algorithm options:(CCOptions)options error:(NSError *__autoreleasing *)error;
 
 
 ///-----------------------------------

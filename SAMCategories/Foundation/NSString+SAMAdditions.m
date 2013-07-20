@@ -9,10 +9,6 @@
 #import "NSString+SAMAdditions.h"
 #import "NSData+SAMAdditions.h"
 
-@interface NSString (SAMPrivateAdditions)
-- (NSData *)sam_prehashData;
-@end
-
 @implementation NSString (SAMAdditions)
 
 - (BOOL)sam_containsString:(NSString *)string {
@@ -20,42 +16,42 @@
 }
 
 - (NSString *)sam_MD2Digest {
-	return [[self sam_prehashData] sam_MD2Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_MD2Digest];
 }
 
 
 - (NSString *)sam_MD4Digest {
-	return [[self sam_prehashData] sam_MD4Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_MD4Digest];
 }
 
 
 - (NSString *)sam_SHA224Digest {
-	return [[self sam_prehashData] sam_SHA224Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_SHA224Digest];
 }
 
 
 - (NSString *)sam_SHA384Digest {
-	return [[self sam_prehashData] sam_SHA384Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_SHA384Digest];
 }
 
 
 - (NSString *)sam_SHA512Digest {
-	return [[self sam_prehashData] sam_SHA512Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_SHA512Digest];
 }
 
 
 - (NSString *)sam_MD5Digest {
-	return [[self sam_prehashData] sam_MD5Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_MD5Digest];
 }
 
 
 - (NSString *)sam_SHA1Digest {
-	return [[self sam_prehashData] sam_SHA1Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_SHA1Digest];
 }
 
 
 - (NSString *)sam_SHA256Digest {
-	return [[self sam_prehashData] sam_SHA256Digest];
+	return [[self dataUsingEncoding:NSUTF8StringEncoding] sam_SHA256Digest];
 }
 
 
@@ -108,6 +104,12 @@
         [string appendFormat:@"%02lx", (unsigned long)digest[i]];
 	}
 	return string;
+}
+
+
+- (NSString *)sam_encryptWithKey:(NSString *)key algorithm:(CCAlgorithm)algorithm options:(CCOptions)options error:(NSError *__autoreleasing *)error {
+	NSData *data = [[self dataUsingEncoding:NSUTF8StringEncoding] sam_encryptWithKey:key algorithm:algorithm options:options error:error];
+	return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 
@@ -282,16 +284,6 @@
 	CFStringRef string = CFUUIDCreateString(NULL, uuid);
 	CFRelease(uuid);
 	return (__bridge_transfer NSString *)string;
-}
-
-@end
-
-
-@implementation NSString (SAMPrivateAdditions)
-
-- (NSData *)sam_prehashData {
-	const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
-	return [NSData dataWithBytes:cstr length:self.length];
 }
 
 @end

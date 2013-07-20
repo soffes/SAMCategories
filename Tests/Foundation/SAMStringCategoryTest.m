@@ -83,6 +83,16 @@
 }
 
 
+//- (void)testEncryption {
+//	NSString *message = @"Super secret stuff.";
+//	NSString *key = @"AwesomeKey";
+//	NSString *encrypted = [message sam_encryptWithKey:key algorithm:kCCAlgorithmAES128 options:kNilOptions error:nil];
+//	NSLog(@"Encrypted: %@", encrypted);
+//
+//	STAssertEqualObjects(, <#a2#>, <#description, ...#>)
+//}
+
+
 - (void)testCompareToVersionString {
 	STAssertEquals([@"1.0.0" sam_compareToVersionString:@"0.0.1"], NSOrderedDescending, nil);
 	STAssertEquals([@"3.2" sam_compareToVersionString:@"4.2"], NSOrderedAscending, nil);

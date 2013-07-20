@@ -35,6 +35,9 @@ static const short sam_base64DecodingTable[256] = {
 	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2
 };
 
+
+#pragma mark - Digests
+
 - (NSString *)sam_MD2Digest {
 	uint8_t digest[CC_MD2_DIGEST_LENGTH];
 	CC_MD2(self.bytes, (CC_LONG)self.length, digest);
@@ -90,6 +93,67 @@ static const short sam_base64DecodingTable[256] = {
 	return [[self class] sam_stringFromDigest:digest length:CC_SHA512_DIGEST_LENGTH];
 }
 
+
+#pragma mark - Encryption
+
+- (NSData *)sam_encryptWithKey:(NSString *)key algorithm:(CCAlgorithm)algorithm options:(CCOptions)options error:(NSError *__autoreleasing *)error {
+	size_t keyLength = 0;
+	switch (algorithm) {
+		case kCCAlgorithm3DES: {
+			keyLength = kCCKeySize3DES;
+			break;
+		}
+		case kCCAlgorithmBlowfish: {
+			keyLength = kCCKeySizeMaxBlowfish;
+			break;
+		}
+		case kCCAlgorithmCAST: {
+			keyLength = kCCKeySizeMaxCAST;
+			break;
+		}
+		case kCCAlgorithmDES: {
+			keyLength = kCCKeySizeDES;
+			break;
+		}
+		case kCCAlgorithmRC2: {
+			keyLength = kCCKeySizeMaxRC2;
+			break;
+		}
+		case kCCAlgorithmRC4: {
+			keyLength = kCCKeySizeMaxRC4;
+			break;
+		}
+	}
+
+	// Setup key
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wvla"
+    char cKey[keyLength + 1];
+#pragma clang diagnostic pop
+
+	bzero(cKey, sizeof(cKey));
+	[key getCString:cKey maxLength:sizeof(cKey) encoding:NSUTF8StringEncoding];
+
+	// Setup output
+	size_t bufferSize = self.length + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+	bzero(buffer, sizeof(bufferSize));
+	size_t numberOfBytesEncrypted = 0;
+
+	// Encrypt
+	CCCryptorStatus result = CCCrypt(kCCEncrypt, algorithm, options, cKey, keyLength, NULL, self.bytes, self.length, buffer, bufferSize, &numberOfBytesEncrypted);
+	if (result == kCCSuccess) {
+		return [NSData dataWithBytesNoCopy:buffer length:bufferSize];
+	}
+
+	free(buffer);
+
+	// TODO: Error
+	return nil;
+}
+
+
+#pragma mark - Base 64
 
 // Adapted from http://www.cocoadev.com/index.pl?BaseSixtyFour
 - (NSString *)sam_base64EncodedString {
