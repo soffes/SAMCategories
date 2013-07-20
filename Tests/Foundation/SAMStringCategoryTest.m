@@ -73,6 +73,16 @@
 }
 
 
+- (void)testHMACDigest {
+	STAssertEqualObjects([@"SAM" sam_HMACDigestWithKey:@"Categories" algorithm:kCCHmacAlgMD5], @"930011eab177645580ab360dba0813d2", nil);
+	STAssertEqualObjects([@"SAM" sam_HMACDigestWithKey:@"Categories" algorithm:kCCHmacAlgSHA1], @"6a0facd65a30b2e025a1bf1ce65105947164c37b", nil);
+	STAssertEqualObjects([@"SAM" sam_HMACDigestWithKey:@"Categories" algorithm:kCCHmacAlgSHA224], @"e7de3995bb0406302a3fdb51bfcfac9aa5cd38a520d8e128c7cf31f2", nil);
+	STAssertEqualObjects([@"SAM" sam_HMACDigestWithKey:@"Categories" algorithm:kCCHmacAlgSHA256], @"d4b44c0911fe49010d575787511d38449669df5d5794ac7699761124ec9d030d", nil);
+	STAssertEqualObjects([@"SAM" sam_HMACDigestWithKey:@"Categories" algorithm:kCCHmacAlgSHA384], @"4665332f415f8ecf8119d0159393be930f797c012dfb578d511618b93f70c5a8828446a69f0995095d21779f6cdcc0fc", nil);
+	STAssertEqualObjects([@"SAM" sam_HMACDigestWithKey:@"Categories" algorithm:kCCHmacAlgSHA512], @"70e1ada7b184e2cf01e224c138573cc855d6278aa5c4a1c51676ff6d5de69d908e86301e60485e6ad91aac42f4f661662ab97ec314be0b6e1c7b140fd8e7a4bd", nil);
+}
+
+
 - (void)testCompareToVersionString {
 	STAssertEquals([@"1.0.0" sam_compareToVersionString:@"0.0.1"], NSOrderedDescending, nil);
 	STAssertEquals([@"3.2" sam_compareToVersionString:@"4.2"], NSOrderedAscending, nil);

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonHMAC.h>
 
 /**
  Provides extensions to `NSString` for various common tasks.
@@ -86,6 +87,15 @@
  @return The string of the SHA512 sum of the receiver.
  */
 - (NSString *)sam_SHA512Sum;
+
+/**
+ Returns a string of the HMAC digest of the receiver.
+ 
+ @param key The key to use in the HMAC digest.
+ @param algorithm The algorithm to use for the HMAC digest.
+ @return The string of the HMAC digest of the receiver.
+ */
+- (NSString *)sam_HMACDigestWithKey:(NSString *)key algorithm:(CCHmacAlgorithm)algorithm;
 
 
 ///-------------------------

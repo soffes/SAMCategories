@@ -59,6 +59,54 @@
 }
 
 
+- (NSString *)sam_HMACDigestWithKey:(NSString *)key algorithm:(CCHmacAlgorithm)algorithm {
+	const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
+    const char *cData = [self cStringUsingEncoding:NSASCIIStringEncoding];
+
+	NSUInteger length = 0;
+	switch (algorithm) {
+		case kCCHmacAlgSHA1: {
+			length = CC_SHA1_DIGEST_LENGTH;
+			break;
+		}
+
+		case kCCHmacAlgMD5: {
+			length = CC_MD5_DIGEST_LENGTH;
+			break;
+		}
+
+		case kCCHmacAlgSHA224: {
+			length = CC_SHA224_DIGEST_LENGTH;
+			break;
+		}
+
+		case kCCHmacAlgSHA256: {
+			length = CC_SHA256_DIGEST_LENGTH;
+			break;
+		}
+
+		case kCCHmacAlgSHA384: {
+			length = CC_SHA384_DIGEST_LENGTH;
+			break;
+		}
+
+		case kCCHmacAlgSHA512: {
+			length = CC_SHA512_DIGEST_LENGTH;
+			break;
+		}
+	}
+
+    unsigned char digest[length];
+    CCHmac(algorithm, cKey, strlen(cKey), cData, strlen(cData), digest);
+
+    NSMutableString *string = [[NSMutableString alloc] initWithCapacity:length * 2];
+    for (NSUInteger i = 0; i < length; i++) {
+        [string appendFormat:@"%02lx", (unsigned long)digest[i]];
+	}
+	return string;
+}
+
+
 // Adapted from http://snipplr.com/view/2771/compare-two-version-strings
 - (NSComparisonResult)sam_compareToVersionString:(NSString *)version {
 	// Break version into fields (separated by '.')
