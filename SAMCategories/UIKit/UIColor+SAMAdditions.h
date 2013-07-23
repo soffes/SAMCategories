@@ -16,6 +16,75 @@
 
 /**
  Creates and returns an UIColor object containing a given value.
+
+ @param hue The hue for the new color.
+ @param saturation The saturation for the new color.
+ @param lightness The lightness for the new color.
+ @param alpha The alpha for the new color.
+
+ @return An UIColor object containing a value.
+ */
++ (instancetype)sam_colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness alpha:(CGFloat)alpha;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+
+ @param css The value for the new color.
+
+ @return An UIColor object containing a value.
+ */
++ (instancetype)sam_colorWithCSS:(NSString *)css;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+
+ @param rgb The value for the new color.
+
+ @return An UIColor object containing a value.
+
+ Example input: `rgb(255, 0, 0)`
+
+ The default alpha value is `1.0`.
+ */
++ (instancetype)sam_colorWithRGB:(NSString *)rgb;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+
+ @param rgba The value for the new color.
+
+ @return An UIColor object containing a value.
+
+ Example input: `argb(255, 0, 0, 1)`
+ */
++ (instancetype)sam_colorWithRGBA:(NSString *)rgba;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+
+ @param hsl The value for the new color.
+
+ @return An UIColor object containing a value.
+
+ Example input: `hsl(255, 1, 1)`
+
+ The default alpha value is `1.0`.
+ */
++ (instancetype)sam_colorWithHSL:(NSString *)hsl;
+
+/**
+ Creates and returns an UIColor object containing a given value.
+
+ @param hsla The value for the new color.
+
+ @return An UIColor object containing a value.
+
+ Example input: `hsla(255, 1, 1, 1)`
+ */
++ (instancetype)sam_colorWithHSLA:(NSString *)hsla;
+
+/**
+ Creates and returns an UIColor object containing a given value.
  
  @param hex The value for the new color. The `#` sign is not required.
  
@@ -26,7 +95,7 @@
  The default alpha value is `1.0`.
  
  */
-+ (UIColor *)sam_colorWithHex:(NSString *)hex;
++ (instancetype)sam_colorWithHex:(NSString *)hex;
 
 /**
  Returns the receiver's value as a hex string.
