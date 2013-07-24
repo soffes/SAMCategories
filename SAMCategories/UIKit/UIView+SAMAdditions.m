@@ -83,4 +83,10 @@
 	return nil;
 }
 
+- (CGPoint)sam_trueCenter {
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    CGPoint trueCenter = UIInterfaceOrientationIsLandscape(orientation) ? CGPointMake(self.center.y, self.center.x) : self.center;
+    return trueCenter;
+}
+
 @end
