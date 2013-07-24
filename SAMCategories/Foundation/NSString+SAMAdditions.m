@@ -287,7 +287,7 @@
 
 #pragma mark - Working with Ranges
 
-- (NSRange)composedRangeWithRange:(NSRange)range {
+- (NSRange)sam_composedRangeWithRange:(NSRange)range {
 	// We're going to make a new range that takes into account surrogate unicode pairs (composed characters)
 	__block NSRange adjustedRange = range;
 
@@ -328,10 +328,10 @@
 }
 
 
-- (NSString *)composedSubstringWithRange:(NSRange)range {
+- (NSString *)sam_composedSubstringWithRange:(NSRange)range {
 	// Return a substring using a composed range so surrogate unicode pairs (composed characters) count as 1 in the
 	// range instead of however many unichars they actually are.
-	return [self substringWithRange:[self composedRangeWithRange:range]];
+	return [self substringWithRange:[self sam_composedRangeWithRange:range]];
 }
 
 @end

@@ -213,7 +213,7 @@
  @param range Input range
  @return adjusted range
  */
-- (NSRange)composedRangeWithRange:(NSRange)range;
+- (NSRange)sam_composedRangeWithRange:(NSRange)range;
 
 /**
  Adjust a range to account for composed characters and get a substring for that range.
@@ -221,6 +221,6 @@
  @param range Input range
  @return Substring with adjusted range
  */
-- (NSString *)composedSubstringWithRange:(NSRange)range;
+- (NSString *)sam_composedSubstringWithRange:(NSRange)range;
 
 @end
