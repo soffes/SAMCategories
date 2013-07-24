@@ -31,11 +31,6 @@
 
 
 + (instancetype)sam_colorWithCSS:(NSString *)css {
-	// Transparent
-	if ([css isEqualToString:@"transparent"]) {
-		return [self clearColor];
-	}
-	
 	// RGB
 	if ([css hasPrefix:@"rgb"]) {
 		return [self sam_colorWithRGB:css];
@@ -57,6 +52,13 @@
 
 
 + (instancetype)sam_colorWithCSSName:(NSString *)name {
+	name = [name lowercaseString];
+	
+	// Transparent
+	if ([name isEqualToString:@"transparent"]) {
+		return [self clearColor];
+	}
+	
 	static NSDictionary *namedColors = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
@@ -230,7 +232,7 @@
 		};
 	});
 
-	NSString *rgb = namedColors[name.lowercaseString];
+	NSString *rgb = namedColors[name];
 	if (rgb) {
 		return [self sam_colorWithRGB:rgb];
 	}
