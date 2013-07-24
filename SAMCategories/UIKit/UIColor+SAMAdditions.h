@@ -15,7 +15,7 @@
 @interface UIColor (SAMAdditions)
 
 /**
- Creates and returns an UIColor object containing a given value.
+ Creates and returns an UIColor object containing a hue, saturation, lightness value.
 
  @param hue The hue for the new color.
  @param saturation The saturation for the new color.
@@ -23,11 +23,13 @@
  @param alpha The alpha for the new color.
 
  @return An UIColor object containing a value.
+ 
+ This converts the color from HSL to HSB and uses UIKit's built-in HSB initializer.
  */
 + (instancetype)sam_colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness alpha:(CGFloat)alpha;
 
 /**
- Creates and returns an UIColor object containing a given value.
+ Creates and returns an UIColor object containing a CSS value.
 
  @param css The value for the new color.
 
@@ -35,53 +37,33 @@
  */
 + (instancetype)sam_colorWithCSS:(NSString *)css;
 
++ (instancetype)sam_colorWithCSSName:(NSString *)name;
+
 /**
- Creates and returns an UIColor object containing a given value.
+ Creates and returns an UIColor object containing a CSS RGB(A) value.
 
  @param rgb The value for the new color.
 
  @return An UIColor object containing a value.
 
- Example input: `rgb(255, 0, 0)`
+ Example input: `rgb(255, 0, 0)`, `rgba(100, 200, 300, 0.4)`
 
  The default alpha value is `1.0`.
  */
 + (instancetype)sam_colorWithRGB:(NSString *)rgb;
 
 /**
- Creates and returns an UIColor object containing a given value.
-
- @param rgba The value for the new color.
-
- @return An UIColor object containing a value.
-
- Example input: `argb(255, 0, 0, 1)`
- */
-+ (instancetype)sam_colorWithRGBA:(NSString *)rgba;
-
-/**
- Creates and returns an UIColor object containing a given value.
+ Creates and returns an UIColor object containing a CSS HSL(A) value.
 
  @param hsl The value for the new color.
 
  @return An UIColor object containing a value.
 
- Example input: `hsl(255, 1, 1)`
+ Example input: `hsl(0, 50%, 20%)`, `hsla(40, 30%, 10%, 0.5)` 
 
  The default alpha value is `1.0`.
  */
 + (instancetype)sam_colorWithHSL:(NSString *)hsl;
-
-/**
- Creates and returns an UIColor object containing a given value.
-
- @param hsla The value for the new color.
-
- @return An UIColor object containing a value.
-
- Example input: `hsla(255, 1, 1, 1)`
- */
-+ (instancetype)sam_colorWithHSLA:(NSString *)hsla;
 
 /**
  Creates and returns an UIColor object containing a given value.

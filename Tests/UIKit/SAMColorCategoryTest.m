@@ -52,6 +52,7 @@
 
 - (void)testColorWithCSS {
 	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithCSS:@"red"], nil);
+	STAssertEqualObjects([UIColor greenColor], [UIColor sam_colorWithCSSName:@"lime"], nil);
 	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithCSS:@"rgb(255,0,0)"], nil);
 	STAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithCSS:@"rgba(255,0,0,0.5)"], nil);
 }
@@ -60,7 +61,7 @@
 - (void)testColorWithHSL {
 	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithHue:0.0f saturation:1.0f lightness:0.5f alpha:1.0f], nil);
 	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithHSL:@"hsl(0,100%,50%)"], nil);
-	STAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithHSLA:@"hsla(0,100%,50%,0.5)"], nil);
+	STAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithHSL:@"hsla(0,100%,50%,0.5)"], nil);
 }
 
 

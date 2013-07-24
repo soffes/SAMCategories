@@ -24,30 +24,25 @@
 @implementation UIColor (SAMAdditions)
 
 // Adapted from https://gist.github.com/xpansive/1337890
-+ (UIColor *)sam_colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness alpha:(CGFloat)alpha {
++ (instancetype)sam_colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness alpha:(CGFloat)alpha {
 	saturation *= lightness < 0.5f ? lightness : 1.0f - lightness;
     return [self colorWithHue:hue saturation:2.0f * saturation / (lightness + saturation) brightness:lightness + saturation alpha:alpha];
 }
 
 
-+ (UIColor *)sam_colorWithCSS:(NSString *)css {
-	// RGBA
-	if ([css hasPrefix:@"rgba("]) {
-		return [self sam_colorWithRGBA:css];
++ (instancetype)sam_colorWithCSS:(NSString *)css {
+	// Transparent
+	if ([css isEqualToString:@"transparent"]) {
+		return [self clearColor];
 	}
-
+	
 	// RGB
-	if ([css hasPrefix:@"rgb("]) {
+	if ([css hasPrefix:@"rgb"]) {
 		return [self sam_colorWithRGB:css];
 	}
 
-	// HSLA
-	if ([css hasPrefix:@"hsla("]) {
-		return [self sam_colorWithHSLA:css];
-	}
-
 	// HSL
-	if ([css hasPrefix:@"hsl("]) {
+	if ([css hasPrefix:@"hsl"]) {
 		return [self sam_colorWithHSL:css];
 	}
 
@@ -57,237 +52,233 @@
 	}
 
 	// Named color
+	return [self sam_colorWithCSSName:css];
+}
+
+
++ (instancetype)sam_colorWithCSSName:(NSString *)name {
 	static NSDictionary *namedColors = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		namedColors = @{
-			@"aliceblue": @"#f0f8ff",
-			@"antiquewhite": @"#faebd7",
-			@"aqua": @"#00ffff",
-			@"aquamarine": @"#7fffd4",
-			@"azure": @"#f0ffff",
-			@"beige": @"#f5f5dc",
-			@"bisque": @"#ffe4c4",
-			@"black": @"#000000",
-			@"blanchedalmond": @"#ffebcd",
-			@"blue": @"#0000ff",
-			@"blueviolet": @"#8a2be2",
-			@"brown": @"#a52a2a",
-			@"burlywood": @"#deb887",
-			@"cadetblue": @"#5f9ea0",
-			@"chartreuse": @"#7fff00",
-			@"chocolate": @"#d2691e",
-			@"coral": @"#ff7f50",
-			@"cornflowerblue": @"#6495ed",
-			@"cornsilk": @"#fff8dc",
-			@"crimson": @"#dc143c",
-			@"cyan": @"#00ffff",
-			@"darkblue": @"#00008b",
-			@"darkcyan": @"#008b8b",
-			@"darkgoldenrod": @"#b8860b",
-			@"darkgray": @"#a9a9a9",
-			@"darkgreen": @"#006400",
-			@"darkkhaki": @"#bdb76b",
-			@"darkmagenta": @"#8b008b",
-			@"darkolivegreen": @"#556b2f",
-			@"darkorange": @"#ff8c00",
-			@"darkorchid": @"#9932cc",
-			@"darkred": @"#8b0000",
-			@"darksalmon": @"#e9967a",
-			@"darkseagreen": @"#8fbc8f",
-			@"darkslateblue": @"#483d8b",
-			@"darkslategray": @"#2f4f4f",
-			@"darkturquoise": @"#00ced1",
-			@"darkviolet": @"#9400d3",
-			@"deeppink": @"#ff1493",
-			@"deepskyblue": @"#00bfff",
-			@"dimgray": @"#696969",
-			@"dodgerblue": @"#1e90ff",
-			@"firebrick": @"#b22222",
-			@"floralwhite": @"#fffaf0",
-			@"forestgreen": @"#228b22",
-			@"fuchsia": @"#ff00ff",
-			@"gainsboro": @"#dcdcdc",
-			@"ghostwhite": @"#f8f8ff",
-			@"gold": @"#ffd700",
-			@"goldenrod": @"#daa520",
-			@"gray": @"#808080",
-			@"green": @"#008000",
-			@"greenyellow": @"#adff2f",
-			@"honeydew": @"#f0fff0",
-			@"hotpink": @"#ff69b4",
-			@"indianred": @"#cd5c5c",
-			@"indigo": @"  #4b0082",
-			@"ivory": @"#fffff0",
-			@"khaki": @"#f0e68c",
-			@"lavender": @"#e6e6fa",
-			@"lavenderblush": @"#fff0f5",
-			@"lawngreen": @"#7cfc00",
-			@"lemonchiffon": @"#fffacd",
-			@"lightblue": @"#add8e6",
-			@"lightcoral": @"#f08080",
-			@"lightcyan": @"#e0ffff",
-			@"lightgoldenrodyellow": @"#fafad2",
-			@"lightgray": @"#d3d3d3",
-			@"lightgreen": @"#90ee90",
-			@"lightpink": @"#ffb6c1",
-			@"lightsalmon": @"#ffa07a",
-			@"lightseagreen": @"#20b2aa",
-			@"lightskyblue": @"#87cefa",
-			@"lightslategray": @"#778899",
-			@"lightsteelblue": @"#b0c4de",
-			@"lightyellow": @"#ffffe0",
-			@"lime": @"#00ff00",
-			@"limegreen": @"#32cd32",
-			@"linen": @"#faf0e6",
-			@"magenta": @"#ff00ff",
-			@"maroon": @"#800000",
-			@"mediumaquamarine": @"#66cdaa",
-			@"mediumblue": @"#0000cd",
-			@"mediumorchid": @"#ba55d3",
-			@"mediumpurple": @"#9370db",
-			@"mediumseagreen": @"#3cb371",
-			@"mediumslateblue": @"#7b68ee",
-			@"mediumspringgreen": @"#00fa9a",
-			@"mediumturquoise": @"#48d1cc",
-			@"mediumvioletred": @"#c71585",
-			@"midnightblue": @"#191970",
-			@"mintcream": @"#f5fffa",
-			@"mistyrose": @"#ffe4e1",
-			@"moccasin": @"#ffe4b5",
-			@"navajowhite": @"#ffdead",
-			@"navy": @"#000080",
-			@"oldlace": @"#fdf5e6",
-			@"olive": @"#808000",
-			@"olivedrab": @"#6b8e23",
-			@"orange": @"#ffa500",
-			@"orangered": @"#ff4500",
-			@"orchid": @"#da70d6",
-			@"palegoldenrod": @"#eee8aa",
-			@"palegreen": @"#98fb98",
-			@"paleturquoise": @"#afeeee",
-			@"palevioletred": @"#db7093",
-			@"papayawhip": @"#ffefd5",
-			@"peachpuff": @"#ffdab9",
-			@"peru": @"#cd853f",
-			@"pink": @"#ffc0cb",
-			@"plum": @"#dda0dd",
-			@"powderblue": @"#b0e0e6",
-			@"purple": @"#800080",
-			@"red": @"#ff0000",
-			@"rosybrown": @"#bc8f8f",
-			@"royalblue": @"#4169e1",
-			@"saddlebrown": @"#8b4513",
-			@"salmon": @"#fa8072",
-			@"sandybrown": @"#f4a460",
-			@"seagreen": @"#2e8b57",
-			@"seashell": @"#fff5ee",
-			@"sienna": @"#a0522d",
-			@"silver": @"#c0c0c0",
-			@"skyblue": @"#87ceeb",
-			@"slateblue": @"#6a5acd",
-			@"slategray": @"#708090",
-			@"snow": @"#fffafa",
-			@"springgreen": @"#00ff7f",
-			@"steelblue": @"#4682b4",
-			@"tan": @"#d2b48c",
-			@"teal": @"#008080",
-			@"thistle": @"#d8bfd8",
-			@"tomato": @"#ff6347",
-			@"turquoise": @"#40e0d0",
-			@"violet": @"#ee82ee",
-			@"wheat": @"#f5deb3",
-			@"white": @"#ffffff",
-			@"whitesmoke": @"#f5f5f5",
-			@"yellow": @"#ffff00",
-			@"yellowgreen": @"#9acd32"
+			// Basic color keywords
+			@"black": @"rgb(0,0,0)",
+			@"silver": @"rgb(192,192,192)",
+			@"gray": @"rgb(128,128,128)",
+			@"white": @"rgb(255,255,255)",
+			@"maroon": @"rgb(128,0,0)",
+			@"red": @"rgb(255,0,0)",
+			@"purple": @"rgb(128,0,128)",
+			@"fuchsia": @"rgb(255,0,255)",
+			@"green": @"rgb(0,128,0)",
+			@"lime": @"rgb(0,255,0)",
+			@"olive": @"rgb(128,128,0)",
+			@"yellow": @"rgb(255,255,0)",
+			@"navy": @"rgb(0,0,128)",
+			@"blue": @"rgb(0,0,255)",
+			@"teal": @"rgb(0,128,128)",
+			@"aqua": @"rgb(0,255,255)",
+
+			// Extended color keywords
+			@"aliceblue": @"rgb(240,248,255)",
+			@"antiquewhite": @"rgb(250,235,215)",
+			@"aqua": @"rgb(0,255,255)",
+			@"aquamarine": @"rgb(127,255,212)",
+			@"azure": @"rgb(240,255,255)",
+			@"beige": @"rgb(245,245,220)",
+			@"bisque": @"rgb(255,228,196)",
+			@"black": @"rgb(0,0,0)",
+			@"blanchedalmond": @"rgb(255,235,205)",
+			@"blue": @"rgb(0,0,255)",
+			@"blueviolet": @"rgb(138,43,226)",
+			@"brown": @"rgb(165,42,42)",
+			@"burlywood": @"rgb(222,184,135)",
+			@"cadetblue": @"rgb(95,158,160)",
+			@"chartreuse": @"rgb(127,255,0)",
+			@"chocolate": @"rgb(210,105,30)",
+			@"coral": @"rgb(255,127,80)",
+			@"cornflowerblue": @"rgb(100,149,237)",
+			@"cornsilk": @"rgb(255,248,220)",
+			@"crimson": @"rgb(220,20,60)",
+			@"cyan": @"rgb(0,255,255)",
+			@"darkblue": @"rgb(0,0,139)",
+			@"darkcyan": @"rgb(0,139,139)",
+			@"darkgoldenrod": @"rgb(184,134,11)",
+			@"darkgray": @"rgb(169,169,169)",
+			@"darkgreen": @"rgb(0,100,0)",
+			@"darkgrey": @"rgb(169,169,169)",
+			@"darkkhaki": @"rgb(189,183,107)",
+			@"darkmagenta": @"rgb(139,0,139)",
+			@"darkolivegreen": @"rgb(85,107,47)",
+			@"darkorange": @"rgb(255,140,0)",
+			@"darkorchid": @"rgb(153,50,204)",
+			@"darkred": @"rgb(139,0,0)",
+			@"darksalmon": @"rgb(233,150,122)",
+			@"darkseagreen": @"rgb(143,188,143)",
+			@"darkslateblue": @"rgb(72,61,139)",
+			@"darkslategray": @"rgb(47,79,79)",
+			@"darkslategrey": @"rgb(47,79,79)",
+			@"darkturquoise": @"rgb(0,206,209)",
+			@"darkviolet": @"rgb(148,0,211)",
+			@"deeppink": @"rgb(255,20,147)",
+			@"deepskyblue": @"rgb(0,191,255)",
+			@"dimgray": @"rgb(105,105,105)",
+			@"dimgrey": @"rgb(105,105,105)",
+			@"dodgerblue": @"rgb(30,144,255)",
+			@"firebrick": @"rgb(178,34,34)",
+			@"floralwhite": @"rgb(255,250,240)",
+			@"forestgreen": @"rgb(34,139,34)",
+			@"fuchsia": @"rgb(255,0,255)",
+			@"gainsboro": @"rgb(220,220,220)",
+			@"ghostwhite": @"rgb(248,248,255)",
+			@"gold": @"rgb(255,215,0)",
+			@"goldenrod": @"rgb(218,165,32)",
+			@"gray": @"rgb(128,128,128)",
+			@"green": @"rgb(0,128,0)",
+			@"greenyellow": @"rgb(173,255,47)",
+			@"grey": @"rgb(128,128,128)",
+			@"honeydew": @"rgb(240,255,240)",
+			@"hotpink": @"rgb(255,105,180)",
+			@"indianred": @"rgb(205,92,92)",
+			@"indigo": @"rgb(75,0,130)",
+			@"ivory": @"rgb(255,255,240)",
+			@"khaki": @"rgb(240,230,140)",
+			@"lavender": @"rgb(230,230,250)",
+			@"lavenderblush": @"rgb(255,240,245)",
+			@"lawngreen": @"rgb(124,252,0)",
+			@"lemonchiffon": @"rgb(255,250,205)",
+			@"lightblue": @"rgb(173,216,230)",
+			@"lightcoral": @"rgb(240,128,128)",
+			@"lightcyan": @"rgb(224,255,255)",
+			@"lightgoldenrodyellow": @"rgb(250,250,210)",
+			@"lightgray": @"rgb(211,211,211)",
+			@"lightgreen": @"rgb(144,238,144)",
+			@"lightgrey": @"rgb(211,211,211)",
+			@"lightpink": @"rgb(255,182,193)",
+			@"lightsalmon": @"rgb(255,160,122)",
+			@"lightseagreen": @"rgb(32,178,170)",
+			@"lightskyblue": @"rgb(135,206,250)",
+			@"lightslategray": @"rgb(119,136,153)",
+			@"lightslategrey": @"rgb(119,136,153)",
+			@"lightsteelblue": @"rgb(176,196,222)",
+			@"lightyellow": @"rgb(255,255,224)",
+			@"lime": @"rgb(0,255,0)",
+			@"limegreen": @"rgb(50,205,50)",
+			@"linen": @"rgb(250,240,230)",
+			@"magenta": @"rgb(255,0,255)",
+			@"maroon": @"rgb(128,0,0)",
+			@"mediumaquamarine": @"rgb(102,205,170)",
+			@"mediumblue": @"rgb(0,0,205)",
+			@"mediumorchid": @"rgb(186,85,211)",
+			@"mediumpurple": @"rgb(147,112,219)",
+			@"mediumseagreen": @"rgb(60,179,113)",
+			@"mediumslateblue": @"rgb(123,104,238)",
+			@"mediumspringgreen": @"rgb(0,250,154)",
+			@"mediumturquoise": @"rgb(72,209,204)",
+			@"mediumvioletred": @"rgb(199,21,133)",
+			@"midnightblue": @"rgb(25,25,112)",
+			@"mintcream": @"rgb(245,255,250)",
+			@"mistyrose": @"rgb(255,228,225)",
+			@"moccasin": @"rgb(255,228,181)",
+			@"navajowhite": @"rgb(255,222,173)",
+			@"navy": @"rgb(0,0,128)",
+			@"oldlace": @"rgb(253,245,230)",
+			@"olive": @"rgb(128,128,0)",
+			@"olivedrab": @"rgb(107,142,35)",
+			@"orange": @"rgb(255,165,0)",
+			@"orangered": @"rgb(255,69,0)",
+			@"orchid": @"rgb(218,112,214)",
+			@"palegoldenrod": @"rgb(238,232,170)",
+			@"palegreen": @"rgb(152,251,152)",
+			@"paleturquoise": @"rgb(175,238,238)",
+			@"palevioletred": @"rgb(219,112,147)",
+			@"papayawhip": @"rgb(255,239,213)",
+			@"peachpuff": @"rgb(255,218,185)",
+			@"peru": @"rgb(205,133,63)",
+			@"pink": @"rgb(255,192,203)",
+			@"plum": @"rgb(221,160,221)",
+			@"powderblue": @"rgb(176,224,230)",
+			@"purple": @"rgb(128,0,128)",
+			@"red": @"rgb(255,0,0)",
+			@"rosybrown": @"rgb(188,143,143)",
+			@"royalblue": @"rgb(65,105,225)",
+			@"saddlebrown": @"rgb(139,69,19)",
+			@"salmon": @"rgb(250,128,114)",
+			@"sandybrown": @"rgb(244,164,96)",
+			@"seagreen": @"rgb(46,139,87)",
+			@"seashell": @"rgb(255,245,238)",
+			@"sienna": @"rgb(160,82,45)",
+			@"silver": @"rgb(192,192,192)",
+			@"skyblue": @"rgb(135,206,235)",
+			@"slateblue": @"rgb(106,90,205)",
+			@"slategray": @"rgb(112,128,144)",
+			@"slategrey": @"rgb(112,128,144)",
+			@"snow": @"rgb(255,250,250)",
+			@"springgreen": @"rgb(0,255,127)",
+			@"steelblue": @"rgb(70,130,180)",
+			@"tan": @"rgb(210,180,140)",
+			@"teal": @"rgb(0,128,128)",
+			@"thistle": @"rgb(216,191,216)",
+			@"tomato": @"rgb(255,99,71)",
+			@"turquoise": @"rgb(64,224,208)",
+			@"violet": @"rgb(238,130,238)",
+			@"wheat": @"rgb(245,222,179)",
+			@"white": @"rgb(255,255,255)",
+			@"whitesmoke": @"rgb(245,245,245)",
+			@"yellow": @"rgb(255,255,0)",
+			@"yellowgreen": @"rgb(154,205,50)"
 		};
 	});
 
-	NSString *hex = namedColors[css.lowercaseString];
-	if (hex) {
-		return [self sam_colorWithHex:hex];
+	NSString *rgb = namedColors[name.lowercaseString];
+	if (rgb) {
+		return [self sam_colorWithRGB:rgb];
+	}
+	return nil;
+}
+
+
++ (instancetype)sam_colorWithRGB:(NSString *)rgb {
+	rgb = [rgb lowercaseString];
+	
+	if (![rgb hasPrefix:@"rgb"]) {
+		return nil;
+	}
+
+	rgb = [rgb stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"rgba( )"]];
+
+	NSArray *values = [rgb componentsSeparatedByString:@","];
+	BOOL hasAlpha = values.count == 4;
+	if (values.count == 3 || hasAlpha) {
+		CGFloat alpha = hasAlpha ? [values[3] floatValue] : 1.0f;
+		return [self colorWithRed:[values[0] floatValue] / 255.0f green:[values[1] floatValue] / 255.0f blue:[values[2] floatValue] / 255.0f alpha:alpha];
 	}
 
 	return nil;
 }
 
 
-+ (UIColor *)sam_colorWithRGB:(NSString *)rgb {
-	if (![rgb hasPrefix:@"rgb("]) {
++ (instancetype)sam_colorWithHSL:(NSString *)hsl {
+	hsl = [hsl lowercaseString];
+	
+	if (![hsl hasPrefix:@"hsl"]) {
 		return nil;
 	}
 
-	rgb = [rgb stringByReplacingOccurrencesOfString:@"rgb(" withString:@""];
-	rgb = [rgb stringByReplacingOccurrencesOfString:@")" withString:@""];
-	rgb = [rgb stringByReplacingOccurrencesOfString:@" " withString:@""];
-
-	NSArray *values = [rgb componentsSeparatedByString:@","];
-	if (values.count != 3) {
-		return nil;
-	}
-
-	return [self colorWithRed:[values[0] floatValue] / 255.0f green:[values[1] floatValue] / 255.0f blue:[values[2] floatValue] / 255.0f alpha:1.0f];
-}
-
-
-+ (UIColor *)sam_colorWithRGBA:(NSString *)rgba {
-	if (![rgba hasPrefix:@"rgba("]) {
-		return nil;
-	}
-
-	rgba = [rgba stringByReplacingOccurrencesOfString:@"rgba(" withString:@""];
-	rgba = [rgba stringByReplacingOccurrencesOfString:@")" withString:@""];
-	rgba = [rgba stringByReplacingOccurrencesOfString:@" " withString:@""];
-
-	NSArray *values = [rgba componentsSeparatedByString:@","];
-	if (values.count != 4) {
-		return nil;
-	}
-
-	return [self colorWithRed:[values[0] floatValue] / 255.0f green:[values[1] floatValue] / 255.0f blue:[values[2] floatValue] / 255.0f alpha:[values[3] floatValue]];
-}
-
-
-+ (UIColor *)sam_colorWithHSL:(NSString *)hsl {
-	if (![hsl hasPrefix:@"hsl("]) {
-		return nil;
-	}
-
-	hsl = [hsl stringByReplacingOccurrencesOfString:@"hsl(" withString:@""];
-	hsl = [hsl stringByReplacingOccurrencesOfString:@"%" withString:@""];
-	hsl = [hsl stringByReplacingOccurrencesOfString:@")" withString:@""];
-	hsl = [hsl stringByReplacingOccurrencesOfString:@" " withString:@""];
+	hsl = [hsl stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"hsla(%) "]];
 
 	NSArray *values = [hsl componentsSeparatedByString:@","];
-	if (values.count != 3) {
-		return nil;
+	BOOL hasAlpha = values.count == 4;
+	if (values.count == 3 || hasAlpha) {
+		CGFloat alpha = hasAlpha ? [values[3] floatValue] : 1.0f;
+		return [self sam_colorWithHue:[values[0] floatValue] / 255.0f saturation:[values[1] floatValue] / 100.0f lightness:[values[2] floatValue] / 100.0f alpha:alpha];
 	}
 
-	return [self sam_colorWithHue:[values[0] floatValue] / 255.0f saturation:[values[1] floatValue] / 100.0f lightness:[values[2] floatValue] / 100.0f alpha:1.0f];
+	return nil;
 }
 
 
-+ (UIColor *)sam_colorWithHSLA:(NSString *)hsla {
-	if (![hsla hasPrefix:@"hsla("]) {
-		return nil;
-	}
-
-	hsla = [hsla stringByReplacingOccurrencesOfString:@"hsla(" withString:@""];
-	hsla = [hsla stringByReplacingOccurrencesOfString:@"%" withString:@""];
-	hsla = [hsla stringByReplacingOccurrencesOfString:@")" withString:@""];
-	hsla = [hsla stringByReplacingOccurrencesOfString:@" " withString:@""];
-
-	NSArray *values = [hsla componentsSeparatedByString:@","];
-	if (values.count != 4) {
-		return nil;
-	}
-
-	return [self sam_colorWithHue:[values[0] floatValue] / 255.0f saturation:[values[1] floatValue] / 100.0f lightness:[values[2] floatValue] / 100.0f alpha:[values[3] floatValue]];
-}
-
-
-+ (UIColor *)sam_colorWithHex:(NSString *)hex {
++ (instancetype)sam_colorWithHex:(NSString *)hex {
 	// Remove `#` and `0x`
 	if ([hex hasPrefix:@"#"]) {
 		hex = [hex substringFromIndex:1];
