@@ -289,39 +289,29 @@
 
 - (NSRange)sam_composedRangeWithRange:(NSRange)range {
 	// We're going to make a new range that takes into account surrogate unicode pairs (composed characters)
-	__block NSRange adjustedRange = range;
-
-	// Adjust the location
-	[self enumerateSubstringsInRange:NSMakeRange(0, range.location + 1) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-		// If they string the iterator found is greater than 1 in length, add that to range location.
-		// This means that there is a composed character before where the range starts who's length is greater than 1.
-		adjustedRange.location += substring.length - 1;
-	}];
-
-
-	// Adjust the length
+	__block NSRange adjustedRange = NSMakeRange(range.location, range.length);
 	NSUInteger length = self.length;
 
-	// Count how many times we iterate so we only iterate over what we care about.
-	__block NSInteger count = 0;
+	// Adjust range location for composed characters that appear before the original range.
+	[self enumerateSubstringsInRange:NSMakeRange(0, length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+		// Stop if we've past the end of the range to be adjusted
+		if (substringRange.location >= adjustedRange.location) {
+			*stop = YES;
+			return;
+		}
+
+		adjustedRange.location += (substringRange.length - 1);
+	}];
+
+	// Adjust range length for composed characters that appear within the original range.
 	[self enumerateSubstringsInRange:NSMakeRange(adjustedRange.location, length - adjustedRange.location) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-		// If they string the iterator found is greater than 1 in length, add that to range length.
-		// This means that there is a composed character inside of the range starts who's length is greater than 1.
-		adjustedRange.length += substring.length - 1;
+		adjustedRange.length += (substringRange.length - 1);
 
-		// Add one to the count
-		count++;
-
-		// If we have iterated as many times as the original length, stop.
-		if (range.length == (NSUInteger)count) {
+		// Stop if we're finished
+		if (NSMaxRange(substringRange) >= NSMaxRange(adjustedRange)) {
 			*stop = YES;
 		}
 	}];
-
-	// Make sure we don't make an invalid range. This should never happen, but let's play it safe anyway.
-	if (adjustedRange.location + adjustedRange.length > length) {
-		adjustedRange.length = length - adjustedRange.location - 1;
-	}
 
 	// Return the adjusted range
 	return adjustedRange;

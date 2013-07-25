@@ -139,4 +139,19 @@
 	STAssertFalse([uuid1 isEqualToString:uuid2], nil);
 }
 
+
+- (void)testComposedRanges {
+	NSString *string = @"Some really great string";
+	STAssertEqualObjects(@"great", [string sam_composedSubstringWithRange:NSMakeRange(12, 5)], nil);
+
+	string = @"👨 Some really great string";
+	STAssertEqualObjects(@"great", [string sam_composedSubstringWithRange:NSMakeRange(14, 5)], nil);
+
+	string = @"👨👩 Some really great string";
+	STAssertEqualObjects(@"great", [string sam_composedSubstringWithRange:NSMakeRange(15, 5)], nil);
+
+	string = @"👨👩 Some really 🐳 great string ⛄️";
+	STAssertEqualObjects(@"great", [string sam_composedSubstringWithRange:NSMakeRange(17, 5)], nil);
+}
+
 @end
