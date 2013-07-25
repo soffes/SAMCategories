@@ -6,4 +6,12 @@ SAMCategories are tested on iOS 6 and Mac OS 10.8 and requires ARC. The will pro
 
 ## Installation
 
-Simply add the files in the `SAMCategories/Foundation` and/or `SAMCategories/UIKit` to your project. You can also add `SAMCategories` to your Podfile if you're using CocoaPods.
+Simply add the files in the `SAMCategories/Foundation` and/or `SAMCategories/UIKit` to your project. If you add the Foundation categories, you'll need to add `SAMCategories/SAMCategories.bundle` to your project as well. Make sure the bundle is copied to your application's resources.
+
+If you're using CocoaPods, simply add the following line to your Podfile:
+
+``` ruby
+pod 'SAMCategories'
+```
+
+Enjoy.
