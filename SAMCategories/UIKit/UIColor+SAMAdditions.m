@@ -42,7 +42,7 @@
 	}
 
 	// Hex
-	if ([css hasPrefix:@"#"] && (css.length == 3 || css.length == 6 || css.length == 8)) {
+	if ([css hasPrefix:@"#"]) {
 		return [self sam_colorWithHex:css];
 	}
 
