@@ -7,11 +7,8 @@
 //
 
 #import "UIDevice+SAMAdditions.h"
-
-#import <objc/runtime.h>
 #import "NSString+SAMAdditions.h"
-
-static int SAMAssociatedDataKey = 0;
+#import "NSObject+SAMAdditions.h"
 
 @implementation UIDevice (SAMAdditions)
 
@@ -34,16 +31,6 @@ static int SAMAssociatedDataKey = 0;
 }
 
 
-- (NSMutableDictionary *)sam_associatedData {
-    NSMutableDictionary *dictionary = objc_getAssociatedObject(self, &SAMAssociatedDataKey);
-    if (dictionary == nil) {
-        dictionary = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, &SAMAssociatedDataKey, dictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return dictionary;
-}
-
-
 - (BOOL)sam_isInnsbruck {
     NSNumber *number = [self sam_associatedData][@"innsbruck"];
     if (number == nil) {
@@ -54,20 +41,6 @@ static int SAMAssociatedDataKey = 0;
             number = @YES;
         }
         [self sam_associatedData][@"innsbruck"] = number;
-    }
-    return [number boolValue];
-}
-
-
-- (BOOL)sam_isGiraffe {
-    NSNumber *number = [self sam_associatedData][@"girraffe"];
-    if (number == nil) {
-        number = @NO;
-        UIScreen *screen = [UIScreen mainScreen];
-        if (screen.bounds.size.height == 568.0) {
-            number = @YES;
-        }
-        [self sam_associatedData][@"girraffe"] = number;
     }
     return [number boolValue];
 }

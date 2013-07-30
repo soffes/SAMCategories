@@ -51,4 +51,11 @@
  */
 - (BOOL)sam_isRetina;
 
+/**
+ Check if the receiver is running on the iPhone 5 form factor.
+
+ @return `YES` if the device is running on the iPhone 5 form factor and `NO` if it is not.
+ */
+- (BOOL)sam_isGiraffe;
+
 @end

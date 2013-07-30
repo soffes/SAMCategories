@@ -7,6 +7,7 @@
 //
 
 #import "UIScreen+SAMAdditions.h"
+#import "NSObject+SAMAdditions.h"
 
 @implementation UIScreen (SAMAdditions)
 
@@ -36,6 +37,20 @@
 		answer = ([self respondsToSelector:@selector(scale)] && [self scale] == 2.0f);
 	});
 	return answer;
+}
+
+
+- (BOOL)sam_isGiraffe {
+    NSNumber *number = [self sam_associatedData][@"girraffe"];
+    if (number == nil) {
+        number = @NO;
+        UIScreen *screen = [UIScreen mainScreen];
+        if (screen.bounds.size.height == 568.0) {
+            number = @YES;
+        }
+        [self sam_associatedData][@"girraffe"] = number;
+    }
+    return [number boolValue];
 }
 
 @end
