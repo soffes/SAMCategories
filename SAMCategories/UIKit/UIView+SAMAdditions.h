@@ -94,7 +94,6 @@
 /**
  Returns the true center of the view, regardless of orientation
  */
- 
  - (CGPoint)sam_trueCenter;
 
 @end
