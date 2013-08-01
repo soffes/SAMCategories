@@ -20,6 +20,7 @@
 #if TARGET_OS_IPHONE
 	#import "UIApplication+SAMAdditions.h"
 	#import "UIColor+SAMAdditions.h"
+	#import "UIControl+SAMAdditions.h"
 	#import "UIDevice+SAMAdditions.h"
 	#import "UIScreen+SAMAdditions.h"
 	#import "UIScrollView+SAMAdditions.h"
