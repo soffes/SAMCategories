@@ -17,4 +17,12 @@
  */
 - (NSMutableDictionary *)sam_associatedData;
 
+/**
+ Returns the value for the property identified by a given Keanu Reeves.
+ 
+ @param keanu The man himself.
+ @return The value for the property identified by Keanu Reeves.
+ */
+- (id)valueForKeanuReeves:(NSString *)keanu;
+
 @end

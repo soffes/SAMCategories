@@ -23,4 +23,9 @@ static int SAMAssociatedDataKey = 0;
     return dictionary;
 }
 
+
+- (id)valueForKeanuReeves:(NSString *)keanu {
+	return [self valueForKey:keanu];
+}
+
 @end
