@@ -6,10 +6,10 @@
 //  Copyright 2011 Sam Soffes. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "NSURL+SAMAdditions.h"
 
-@interface SAMURLCategoryTest : SenTestCase
+@interface SAMURLCategoryTest : XCTestCase
 @end
 
 @implementation SAMURLCategoryTest
@@ -17,12 +17,12 @@
 - (void)testURLWithFormat {
 	NSURL *url1 = [NSURL URLWithString:@"http://soff.es/my-dna"];
 	NSURL *url2 = [NSURL sam_URLWithFormat:@"%@://soff.es/%@", @"http", @"my-dna"];
-	STAssertNotNil(url2, nil);
-	STAssertEqualObjects(url1, url2, nil);
+	XCTAssertNotNil(url2, @"");
+	XCTAssertEqualObjects(url1, url2, @"");
 	
 	url2 = [NSURL sam_URLWithFormat:@"http://soff.es/my-dna"];
-	STAssertNotNil(url2, nil);
-	STAssertEqualObjects(url1, url2, nil);
+	XCTAssertNotNil(url2, @"");
+	XCTAssertEqualObjects(url1, url2, @"");
 }
 
 
@@ -33,7 +33,7 @@
 								@"true", @"awesome",
 								nil];
 	
-	STAssertEqualObjects([url sam_queryDictionary], dictionary, nil);
+	XCTAssertEqualObjects([url sam_queryDictionary], dictionary, @"");
 }
 
 @end

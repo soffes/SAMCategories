@@ -6,10 +6,10 @@
 //  Copyright 2011 Sam Soffes. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "NSArray+SAMAdditions.h"
 
-@interface SAMArrayCategoryTest : SenTestCase
+@interface SAMArrayCategoryTest : XCTestCase
 @end
 
 @implementation SAMArrayCategoryTest
@@ -25,9 +25,9 @@
 		
 	NSString *digest1 = [array1 sam_MD5Digest];
 	NSString *digest2 = [array2 sam_MD5Digest];
-	STAssertNotNil(digest1, nil);
-	STAssertNotNil(digest2, nil);
-	STAssertEqualObjects(digest1, digest2, nil);
+	XCTAssertNotNil(digest1, @"");
+	XCTAssertNotNil(digest2, @"");
+	XCTAssertEqualObjects(digest1, digest2, @"");
 }
 
 
@@ -38,9 +38,9 @@
 	
 	NSString *digest1 = [array1 sam_SHA1Digest];
 	NSString *digest2 = [array2 sam_SHA1Digest];
-	STAssertNotNil(digest1, nil);
-	STAssertNotNil(digest2, nil);
-	STAssertEqualObjects(digest1, digest2, nil);
+	XCTAssertNotNil(digest1, @"");
+	XCTAssertNotNil(digest2, @"");
+	XCTAssertEqualObjects(digest1, digest2, @"");
 }
 
 @end

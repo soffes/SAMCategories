@@ -6,103 +6,103 @@
 //  Copyright 2011 Sam Soffes. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "UIColor+SAMAdditions.h"
 
-@interface SAMColorCategoryTest : SenTestCase
+@interface SAMColorCategoryTest : XCTestCase
 @end
 
 @implementation SAMColorCategoryTest
 
-- (void)testAlpha {
+- (void)teXCTAlpha {
 	UIColor *color = [UIColor blackColor];
-	STAssertEquals([color sam_alpha], 1.0f, nil);
+	XCTAssertEqual([color sam_alpha], 1.0f, @"");
 	
 	color = [UIColor colorWithRed:0.3f green:0.4f blue:0.5f alpha:0.6f];
-	STAssertEquals([color sam_alpha], 0.6f, nil);
+	XCTAssertEqual([color sam_alpha], 0.6f, @"");
 }
 
 
 - (void)testRed {
 	UIColor *color = [UIColor redColor];
-	STAssertEquals([color sam_red], 1.0f, nil);
+	XCTAssertEqual([color sam_red], 1.0f, @"");
 	
 	color = [UIColor colorWithRed:0.3f green:0.4f blue:0.5f alpha:0.6f];
-	STAssertEquals([color sam_red], 0.3f, nil);
+	XCTAssertEqual([color sam_red], 0.3f, @"");
 }
 
 
 - (void)testGreen {
 	UIColor *color = [UIColor greenColor];
-	STAssertEquals([color sam_green], 1.0f, nil);
+	XCTAssertEqual([color sam_green], 1.0f, @"");
 	
 	color = [UIColor colorWithRed:0.3f green:0.4f blue:0.5f alpha:0.6f];
-	STAssertEquals([color sam_green], 0.4f, nil);
+	XCTAssertEqual([color sam_green], 0.4f, @"");
 }
 
 
 - (void)testBlue {
 	UIColor *color = [UIColor blueColor];
-	STAssertEquals([color sam_blue], 1.0f, nil);
+	XCTAssertEqual([color sam_blue], 1.0f, @"");
 	
 	color = [UIColor colorWithRed:0.3f green:0.4f blue:0.5f alpha:0.6f];
-	STAssertEquals([color sam_blue], 0.5f, nil);
+	XCTAssertEqual([color sam_blue], 0.5f, @"");
 }
 
 
 - (void)testColorWithCSS {
-	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithCSS:@"red"], nil);
-	STAssertEqualObjects([UIColor greenColor], [UIColor sam_colorWithCSSName:@"lime"], nil);
-	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithCSS:@"rgb(255,0,0)"], nil);
-	STAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithCSS:@"rgba(255,0,0,0.5)"], nil);
+	XCTAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithCSS:@"red"], @"");
+	XCTAssertEqualObjects([UIColor greenColor], [UIColor sam_colorWithCSSName:@"lime"], @"");
+	XCTAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithCSS:@"rgb(255,0,0)"], @"");
+	XCTAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithCSS:@"rgba(255,0,0,0.5)"], @"");
 }
 
 
 - (void)testColorWithHSL {
-	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithHue:0.0f saturation:1.0f lightness:0.5f alpha:1.0f], nil);
-	STAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithHSL:@"hsl(0,100%,50%)"], nil);
-	STAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithHSL:@"hsla(0,100%,50%,0.5)"], nil);
+	XCTAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithHue:0.0f saturation:1.0f lightness:0.5f alpha:1.0f], @"");
+	XCTAssertEqualObjects([UIColor redColor], [UIColor sam_colorWithHSL:@"hsl(0,100%,50%)"], @"");
+	XCTAssertEqualObjects([UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.5f], [UIColor sam_colorWithHSL:@"hsla(0,100%,50%,0.5)"], @"");
 }
 
 
 - (void)testColorWithHex {
 	UIColor *red = [UIColor redColor];
-	STAssertEqualObjects(red, [UIColor sam_colorWithHex:@"f00"], nil);
-	STAssertEqualObjects(red, [UIColor sam_colorWithHex:@"ff0000"], nil);
-	STAssertEqualObjects(red, [UIColor sam_colorWithHex:@"ff0000ff"], nil);
+	XCTAssertEqualObjects(red, [UIColor sam_colorWithHex:@"f00"], @"");
+	XCTAssertEqualObjects(red, [UIColor sam_colorWithHex:@"ff0000"], @"");
+	XCTAssertEqualObjects(red, [UIColor sam_colorWithHex:@"ff0000ff"], @"");
 	
 	UIColor *green = [UIColor greenColor];
-	STAssertEqualObjects(green, [UIColor sam_colorWithHex:@"0f0"], nil);
-	STAssertEqualObjects(green, [UIColor sam_colorWithHex:@"00ff00"], nil);
-	STAssertEqualObjects(green, [UIColor sam_colorWithHex:@"00ff00ff"], nil);
+	XCTAssertEqualObjects(green, [UIColor sam_colorWithHex:@"0f0"], @"");
+	XCTAssertEqualObjects(green, [UIColor sam_colorWithHex:@"00ff00"], @"");
+	XCTAssertEqualObjects(green, [UIColor sam_colorWithHex:@"00ff00ff"], @"");
 	
 	UIColor *blue = [UIColor blueColor];
-	STAssertEqualObjects(blue, [UIColor sam_colorWithHex:@"00f"], nil);
-	STAssertEqualObjects(blue, [UIColor sam_colorWithHex:@"0000ff"], nil);
-	STAssertEqualObjects(blue, [UIColor sam_colorWithHex:@"0000ffff"], nil);
+	XCTAssertEqualObjects(blue, [UIColor sam_colorWithHex:@"00f"], @"");
+	XCTAssertEqualObjects(blue, [UIColor sam_colorWithHex:@"0000ff"], @"");
+	XCTAssertEqualObjects(blue, [UIColor sam_colorWithHex:@"0000ffff"], @"");
 	
 	UIColor *bleh = [UIColor colorWithRed:1.0f green:0.2f blue:0.0f alpha:0.2f];
-	STAssertEqualObjects(bleh, [UIColor sam_colorWithHex:@"ff330033"], nil);
+	XCTAssertEqualObjects(bleh, [UIColor sam_colorWithHex:@"ff330033"], @"");
 }
 
 
 - (void)testHexValue {
 	UIColor *red = [UIColor redColor];
-	STAssertEqualObjects([red sam_hexValue], @"ff0000", nil);
-	STAssertEqualObjects([red sam_hexValueWithAlpha:YES], @"ff0000ff", nil);
+	XCTAssertEqualObjects([red sam_hexValue], @"ff0000", @"");
+	XCTAssertEqualObjects([red sam_hexValueWithAlpha:YES], @"ff0000ff", @"");
 	
 	UIColor *green = [UIColor greenColor];
-	STAssertEqualObjects([green sam_hexValue], @"00ff00", nil);
-	STAssertEqualObjects([green sam_hexValueWithAlpha:YES], @"00ff00ff", nil);
+	XCTAssertEqualObjects([green sam_hexValue], @"00ff00", @"");
+	XCTAssertEqualObjects([green sam_hexValueWithAlpha:YES], @"00ff00ff", @"");
 	
 	UIColor *blue = [UIColor blueColor];
-	STAssertEqualObjects([blue sam_hexValue], @"0000ff", nil);
-	STAssertEqualObjects([blue sam_hexValueWithAlpha:YES], @"0000ffff", nil);
+	XCTAssertEqualObjects([blue sam_hexValue], @"0000ff", @"");
+	XCTAssertEqualObjects([blue sam_hexValueWithAlpha:YES], @"0000ffff", @"");
 	
 	UIColor *white = [UIColor whiteColor];
-	STAssertEqualObjects([white sam_hexValue], @"ffffff", nil);
-	STAssertEqualObjects([white sam_hexValueWithAlpha:YES], @"ffffffff", nil);
-	STAssertEqualObjects([[white colorWithAlphaComponent:0.2f] sam_hexValueWithAlpha:YES], @"ffffff33", nil);
+	XCTAssertEqualObjects([white sam_hexValue], @"ffffff", @"");
+	XCTAssertEqualObjects([white sam_hexValueWithAlpha:YES], @"ffffffff", @"");
+	XCTAssertEqualObjects([[white colorWithAlphaComponent:0.2f] sam_hexValueWithAlpha:YES], @"ffffff33", @"");
 }
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright 2011 Sam Soffes. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "NSDictionary+SAMAdditions.h"
 
-@interface SAMDictionaryCategoryTest : SenTestCase
+@interface SAMDictionaryCategoryTest : XCTestCase
 @end
 
 @implementation SAMDictionaryCategoryTest
@@ -21,7 +21,7 @@
 								nil];
 	
 	NSString *string = [dictionary sam_stringWithFormEncodedComponents];
-	STAssertEqualObjects([NSDictionary sam_dictionaryWithFormEncodedString:string], dictionary, nil);
+	XCTAssertEqualObjects([NSDictionary sam_dictionaryWithFormEncodedString:string], dictionary, @"");
 	
 	// Go nuts
 	dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -30,7 +30,7 @@
 				  nil];
 	
 	string = [dictionary sam_stringWithFormEncodedComponents];
-	STAssertEqualObjects([NSDictionary sam_dictionaryWithFormEncodedString:string], dictionary, nil);
+	XCTAssertEqualObjects([NSDictionary sam_dictionaryWithFormEncodedString:string], dictionary, @"");
 }
 
 
@@ -53,9 +53,9 @@
 	
 	NSString *digest1 = [dictionary1 sam_MD5Digest];
 	NSString *digest2 = [dictionary2 sam_MD5Digest];
-	STAssertNotNil(digest1, nil);
-	STAssertNotNil(digest2, nil);
-	STAssertEqualObjects(digest1, digest2, nil);
+	XCTAssertNotNil(digest1, @"");
+	XCTAssertNotNil(digest2, @"");
+	XCTAssertEqualObjects(digest1, digest2, @"");
 }
 
 
@@ -78,9 +78,9 @@
 	
 	NSString *digest1 = [dictionary1 sam_SHA1Digest];
 	NSString *digest2 = [dictionary2 sam_SHA1Digest];
-	STAssertNotNil(digest1, nil);
-	STAssertNotNil(digest2, nil);
-	STAssertEqualObjects(digest1, digest2, nil);
+	XCTAssertNotNil(digest1, @"");
+	XCTAssertNotNil(digest2, @"");
+	XCTAssertEqualObjects(digest1, digest2, @"");
 }
 
 @end

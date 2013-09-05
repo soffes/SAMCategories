@@ -6,23 +6,23 @@
 //  Copyright 2013 Sam Soffes. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "NSObject+SAMAdditions.h"
 
-@interface SAMObjectCategoryTest : SenTestCase
+@interface SAMObjectCategoryTest : XCTestCase
 @end
 
 @implementation SAMObjectCategoryTest
 
 - (void)testAssociatedData {
 	NSObject *object = [[NSObject alloc] init];
-	STAssertTrue([object sam_associatedData].count == 0, nil);
+	XCTAssertTrue([object sam_associatedData].count == 0, @"");
 
 	[object sam_associatedData][@"foo"] = @"bar";
-	STAssertEqualObjects([object sam_associatedData][@"foo"], @"bar", nil);
+	XCTAssertEqualObjects([object sam_associatedData][@"foo"], @"bar", @"");
 
 	object = [[NSObject alloc] init];
-	STAssertNil([object sam_associatedData][@"foo"], nil);
+	XCTAssertNil([object sam_associatedData][@"foo"], @"");
 }
 
 @end

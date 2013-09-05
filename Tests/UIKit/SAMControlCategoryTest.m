@@ -6,10 +6,10 @@
 //  Copyright 2011 Sam Soffes. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "UIControl+SAMAdditions.h"
 
-@interface SAMControlCategoryTest : SenTestCase
+@interface SAMControlCategoryTest : XCTestCase
 @end
 
 @implementation SAMControlCategoryTest
@@ -22,11 +22,11 @@
 	[control addTarget:anotherObject action:@selector(description) forControlEvents:UIControlEventTouchUpInside];
 	
 	NSSet *targets = [NSSet setWithObjects:self, anotherObject, nil];
-	STAssertEqualObjects([control allTargets], targets, nil);
+	XCTAssertEqualObjects([control allTargets], targets, @"");
 	
 	[control sam_removeAllTargets];
 	
-	STAssertTrue([[control allTargets] count] == 0, nil);
+	XCTAssertTrue([[control allTargets] count] == 0, @"");
 }
 
 @end
