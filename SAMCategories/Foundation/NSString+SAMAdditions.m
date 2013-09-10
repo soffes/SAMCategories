@@ -96,6 +96,10 @@
 		}
 	}
 
+	if (length == 0) {
+		return nil;
+	}
+
     unsigned char *digest = malloc(length);
     CCHmac(algorithm, cKey, strlen(cKey), cData, strlen(cData), digest);
 
