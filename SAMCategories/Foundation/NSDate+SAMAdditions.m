@@ -183,19 +183,19 @@
 	} else if (intervalInMinutes >= 45 && intervalInMinutes <= 89) {
 		return SAMCategoriesLocalizedString(@"about 1 hour");
 	} else if (intervalInMinutes >= 90 && intervalInMinutes <= 1439) {
-		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"about %d hours"), (NSInteger)((double)intervalInMinutes / 60.0f)];
+		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"about %d hours"), (NSInteger)ceilf((CGFloat)intervalInMinutes / 60.0f)];
 	} else if (intervalInMinutes >= 1440 && intervalInMinutes <= 2879) {
 		return SAMCategoriesLocalizedString(@"1 day");
 	} else if (intervalInMinutes >= 2880 && intervalInMinutes <= 43199) {
-		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"%d days"), (NSInteger)((double)intervalInMinutes / 1440.0f)];
+		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"%d days"), (NSInteger)ceilf((CGFloat)intervalInMinutes / 1440.0f)];
 	} else if (intervalInMinutes >= 43200 && intervalInMinutes <= 86399) {
 		return SAMCategoriesLocalizedString(@"about 1 month");
 	} else if (intervalInMinutes >= 86400 && intervalInMinutes <= 525599) {
-		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"%d months"), (NSInteger)((double)intervalInMinutes / 43200.0f)];
+		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"%d months"), (NSInteger)ceilf((CGFloat)intervalInMinutes / 43200.0f)];
 	} else if (intervalInMinutes >= 525600 && intervalInMinutes <= 1051199) {
 		return SAMCategoriesLocalizedString(@"about 1 year");
 	} else {
-		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"over %d years"), (NSInteger)((double)intervalInMinutes / 525600.0f)];
+		return [NSString stringWithFormat:SAMCategoriesLocalizedString(@"over %d years"), (NSInteger)ceilf((CGFloat)intervalInMinutes / 525600.0f)];
 	}
 	return nil;
 }
