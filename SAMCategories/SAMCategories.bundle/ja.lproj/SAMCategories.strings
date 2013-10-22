@@ -16,7 +16,7 @@
 "%@d" = "%@日";   // several days
 
 "1 minute" = "1分";
-"%d minutes" = "%d秒以下";
+"less than %d seconds" = "%d秒以下";
 "half a minute" = "３０秒";
 "less than a minute" = "1分以下";
 "%d minutes" = "%d分";
