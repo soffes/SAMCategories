@@ -16,15 +16,15 @@
 "%@d" = "%@天";   // several days
 
 "1 minute" = "1 分钟";
-"%d minutes" = "少于 %d 秒";
+"less than %d seconds" = "少于 %d 秒";
 "half a minute" = "半分钟";
 "less than a minute" = "少于一分钟";
 "%d minutes" = "%d 分钟";
-"about 1 hour" = "大约1小时";
-"about %d hours" = "大约%d 小时";
+"about 1 hour" = "大约 1 小时";
+"about %d hours" = "大约 %d 小时";
 "1 day" = "1 天";
 "%d days" = "%d 天";
-"about 1 month" = "大约1个月";
+"about 1 month" = "大约 1 个月";
 "%d months" = "%d 月";
-"about 1 year" = "大约1年";
-"over %d years" = "超过%d 年";
+"about 1 year" = "大约 1 年";
+"over %d years" = "超过 %d 年";
