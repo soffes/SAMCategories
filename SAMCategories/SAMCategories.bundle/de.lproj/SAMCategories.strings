@@ -6,14 +6,16 @@
 //  Copyright 2012-2013 Sam Soffes. All rights reserved.
 //
 
-"1s" = "1S";   // one second
+"1s" = "1s";   // one second
 "%ds" = "%ds";   // several seconds
-"1m" = "1M";   // one minutes
+"1m" = "1m";   // one minutes
 "%dm" = "%dm";   // several minutes
-"1h" = "1St";   // one hours
-"%dh" = "%dst";   // several hours
+"1h" = "1h";   // one hours
+"%dh" = "%dh";   // several hours
 "1d" = "1T";   // one day
 "%@d" = "%@T";   // several days
+"1y" = "1J";   // one year
+"%@y" = "%@J";   // several years
 
 "1 minute" = "1 Minute";
 "less than %d seconds" = "weniger als %d Sekunden";
