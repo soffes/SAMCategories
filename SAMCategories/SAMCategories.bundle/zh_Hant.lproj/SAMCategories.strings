@@ -14,6 +14,8 @@
 "%dh" = "%d小時";   // several hours
 "1d" = "1天";   // one day
 "%@d" = "%@天";   // several days
+"1y" = "1年";   // one year
+"%@y" = "%@年";   // several years
 
 "1 minute" = "1 分鐘";
 "less than %d seconds" = "少於 %d 秒";
