@@ -15,16 +15,16 @@
 "1d" = "1天";   // one day
 "%@d" = "%@天";   // several days
 
-"1 minute" = "1分鍾";
-"%d minutes" = "少于 %d 秒";
-"half a minute" = "半分鍾";
-"less than a minute" = "少于一分鍾";
-"%d minutes" = "%d 分鍾";
-"about 1 hour" = "大約1小時";
-"about %d hours" = "大約%d 小時";
-"1 day" = "1天";
+"1 minute" = "1 分鐘";
+"less than %d seconds" = "少於 %d 秒";
+"half a minute" = "半分鐘";
+"less than a minute" = "少於一分鐘";
+"%d minutes" = "%d 分鐘";
+"about 1 hour" = "大約 1 小時";
+"about %d hours" = "大約 %d 小時";
+"1 day" = "1 天";
 "%d days" = "%d 天";
-"about 1 month" = "大約1個月";
+"about 1 month" = "大約 1 個月";
 "%d months" = "%d 月";
-"about 1 year" = "大約1年";
-"over %d years" = "超過%d 年";
+"about 1 year" = "大約 1 年";
+"over %d years" = "超過 %d 年";
