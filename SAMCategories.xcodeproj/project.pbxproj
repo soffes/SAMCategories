@@ -191,10 +191,10 @@
 		217B931517D93EB3008BEAE8 /* SAMCategories */ = {
 			isa = PBXGroup;
 			children = (
-				217B931617D93EB3008BEAE8 /* Foundation */,
-				217B932717D93EB3008BEAE8 /* SAMCategories.bundle */,
 				217B932817D93EB3008BEAE8 /* SAMCategories.h */,
+				217B931617D93EB3008BEAE8 /* Foundation */,
 				217B932917D93EB3008BEAE8 /* UIKit */,
+				217B932717D93EB3008BEAE8 /* SAMCategories.bundle */,
 			);
 			path = SAMCategories;
 			sourceTree = "<group>";

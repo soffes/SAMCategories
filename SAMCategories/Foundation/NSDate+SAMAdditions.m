@@ -9,6 +9,7 @@
 #import "NSDate+SAMAdditions.h"
 #include <time.h>
 #include <xlocale.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #define SAMCategoriesBundle [NSBundle bundleWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SAMCategories.bundle"]]
 #define SAMCategoriesLocalizedString(key)  NSLocalizedStringFromTableInBundle((key), @"SAMCategories", SAMCategoriesBundle, nil)
