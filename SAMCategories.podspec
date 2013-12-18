@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'SAMCategories'
-  spec.version = '0.3.6'
+  spec.version = '0.4.0'
   spec.authors = { 'Sam Soffes' => 'sam@soff.es' }
   spec.homepage = 'https://github.com/soffes/SAMCategories'
   spec.summary = 'Foundation and UIKit categories.'
@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.resources = 'SAMCategories/SAMCategories.bundle'
 
   spec.ios.frameworks = 'UIKit', 'CoreGraphics', 'QuartzCore'
-  spec.ios.source_files = 'SAMCategories/**/*.{h,m}'
+  spec.ios.source_files = 'SAMCategories/*.{h,m}'
 
-  spec.osx.source_files = 'SAMCategories/Foundation/*.{h,m}'
+  spec.osx.source_files = 'SAMCategories/NS*.{h,m}'
 end
