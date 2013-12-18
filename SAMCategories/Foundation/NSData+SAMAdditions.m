@@ -91,6 +91,17 @@ static const short sam_base64DecodingTable[256] = {
 }
 
 
+- (NSString *)sam_hexadedimalString {
+    NSMutableString *string = [NSMutableString string];
+    const unsigned char *bytes = [self bytes];
+    NSUInteger length = [self length];
+    for (NSUInteger i = 0; i < length; i++) {
+        [string appendFormat:@"%02x", bytes[i]];
+    }
+    return string;
+}
+
+
 // Adapted from http://www.cocoadev.com/index.pl?BaseSixtyFour
 - (NSString *)sam_base64EncodedString {
 	const uint8_t *input = self.bytes;

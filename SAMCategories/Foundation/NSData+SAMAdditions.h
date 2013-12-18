@@ -73,6 +73,13 @@
  */
 - (NSString *)sam_SHA512Digest;
 
+/**
+ Returns a hexadecimal representation of the receiver.
+ 
+ @return A hexadecimal representation of the receiver.
+ */
+- (NSString *)sam_hexadedimalString;
+
 
 ///-----------------------------------
 /// @name Base64 Encoding and Decoding
