@@ -3,7 +3,7 @@
 //  SAMCategories
 //
 //  Created by Sam Soffes on 7/13/09.
-//  Copyright 2009-2011 Sam Soffes. All rights reserved.
+//  Copyright (c) 2009-2014 Sam Soffes. All rights reserved.
 //
 
 #import "UIDevice+SAMAdditions.h"

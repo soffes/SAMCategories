@@ -3,7 +3,7 @@
 //  SAMCategories
 //
 //  Created by Sam Soffes on 8/19/09.
-//  Copyright 2009-2013 Sam Soffes. All rights reserved.
+//  Copyright (c) 2009-2014 Sam Soffes. All rights reserved.
 //
 
 #import "NSArray+SAMAdditions.h"

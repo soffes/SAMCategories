@@ -3,7 +3,7 @@
 //  SAMCategories
 //
 //  Created by Sam Soffes on 4/12/10.
-//  Copyright 2010-2013 Sam Soffes. All rights reserved.
+//  Copyright (c) 2010-2014 Sam Soffes. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

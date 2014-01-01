@@ -3,7 +3,7 @@
 //  SSToolkit
 //
 //  Created by Sam Soffes on 4/15/11.
-//  Copyright 2011 Sam Soffes. All rights reserved.
+//  Copyright (c) 2011-2014. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
