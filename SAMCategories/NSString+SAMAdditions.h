@@ -223,4 +223,12 @@
  */
 - (NSString *)sam_composedSubstringWithRange:(NSRange)range;
 
+/**
+ Get the range of a word for a given character index.
+ 
+ @param index Character index
+ @return Range of the containing word.
+ */
+- (NSRange)sam_wordRangeAtIndex:(NSUInteger)index;
+
 @end

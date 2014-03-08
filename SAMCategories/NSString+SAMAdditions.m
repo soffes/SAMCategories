@@ -326,6 +326,22 @@
 	return [self substringWithRange:[self sam_composedRangeWithRange:range]];
 }
 
+
+- (NSRange)sam_wordRangeAtIndex:(NSUInteger)index {
+	NSCharacterSet *whitespace = [NSCharacterSet whitespaceCharacterSet];
+	NSInteger beginIndex = index;
+    while(beginIndex > 0 && ![whitespace characterIsMember:[self characterAtIndex:beginIndex - 1]]) {
+        beginIndex--;
+    }
+
+    NSInteger endIndex = index;
+    NSInteger lenght = [self length];
+    while (endIndex < lenght && ![whitespace characterIsMember:[self characterAtIndex:endIndex]]) {
+        endIndex++;
+    }
+    return NSMakeRange(beginIndex, endIndex - beginIndex);
+}
+
 @end
 
 
