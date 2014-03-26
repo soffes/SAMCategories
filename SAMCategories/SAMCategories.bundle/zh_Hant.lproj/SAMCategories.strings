@@ -6,21 +6,21 @@
 //  Copyright (c) 2012-2014 Sam Soffes. All rights reserved.
 //
 
-"1s" = "1秒";   // one second
-"%ds" = "%d秒";   // several seconds
-"1m" = "1分";   // one minutes
-"%dm" = "%d分";   // several minutes
-"1h" = "1小時";   // one hours
-"%dh" = "%d小時";   // several hours
-"1d" = "1天";   // one day
-"%@d" = "%@天";   // several days
-"1y" = "1年";   // one year
-"%@y" = "%@年";   // several years
+"1s" = "1 秒";   // one second
+"%ds" = "%d 秒";   // several seconds
+"1m" = "1 分鐘";   // one minutes
+"%dm" = "%d 分鐘";   // several minutes
+"1h" = "1 小時";   // one hours
+"%dh" = "%d 小時";   // several hours
+"1d" = "1 天";   // one day
+"%@d" = "%@ 天";   // several days
+"1y" = "1 年";   // one year
+"%@y" = "%@ 年";   // several years
 
 "1 minute" = "1 分鐘";
 "less than %d seconds" = "少於 %d 秒";
 "half a minute" = "半分鐘";
-"less than a minute" = "少於一分鐘";
+"less than a minute" = "少於 1 分鐘";
 "%d minutes" = "%d 分鐘";
 "about 1 hour" = "大約 1 小時";
 "about %d hours" = "大約 %d 小時";
