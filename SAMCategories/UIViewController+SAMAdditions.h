@@ -32,4 +32,15 @@
  */
 - (void)sam_displayErrorString:(NSString *)string;
 
+/**
+ Returns the first parent view controller of a given class.
+ 
+ If a controller is not found for the given `klass`, `nil` is returned.
+ 
+ @param klass A Class to search `parentViewController` for
+ 
+ @return A view controller object, or `nil`
+ */
+- (UIViewController *)sam_firstParentViewControllerOfClass:(Class)klass;
+
 @end
