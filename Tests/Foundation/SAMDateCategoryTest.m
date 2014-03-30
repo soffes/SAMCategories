@@ -32,6 +32,10 @@
 	date = [NSDate dateWithTimeIntervalSince1970:1372347572];
 	string = @"2013-06-27T15:39:32.508Z";
 	XCTAssertEqualObjects(date, [NSDate sam_dateFromISO8601String:string], @"");
+
+	date = [NSDate dateWithTimeIntervalSince1970:1395198000];
+	string = @"2014-03-18T20:00:00.000-07:00";
+	XCTAssertEqualObjects(date, [NSDate sam_dateFromISO8601String:string], @"");
 }
 
 
