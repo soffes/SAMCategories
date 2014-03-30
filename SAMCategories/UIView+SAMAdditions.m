@@ -11,15 +11,6 @@
 
 @implementation UIView (SAMAdditions)
 
-- (UIImage *)sam_imageRepresentation {
-	UIGraphicsBeginImageContext(self.bounds.size);
-	[self.layer renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	return image;
-}
-
-
 - (void)sam_hide {
 	self.alpha = 0.0f;
 }
