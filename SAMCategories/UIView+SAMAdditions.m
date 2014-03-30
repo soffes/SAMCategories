@@ -11,6 +11,15 @@
 
 @implementation UIView (SAMAdditions)
 
+- (UIImage *)sam_imageRepresentation {
+	UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0.0f);
+	[self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return image;
+}
+
+
 - (void)sam_hide {
 	self.alpha = 0.0f;
 }
