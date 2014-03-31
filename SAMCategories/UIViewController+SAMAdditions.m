@@ -30,7 +30,7 @@
 
 
 - (UIViewController *)sam_firstParentViewControllerOfClass:(Class)klass {
-    for (UIViewController *controller = self.parentViewController; controller != nil; controller = self.parentViewController) {
+    for (UIViewController *controller = self.parentViewController; controller != nil; controller = controller.parentViewController) {
 		if ([controller isKindOfClass:klass]) {
 			return controller;
 		}
