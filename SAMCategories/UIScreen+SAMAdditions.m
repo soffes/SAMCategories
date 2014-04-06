@@ -44,8 +44,7 @@
     NSNumber *number = [self sam_associatedData][@"girraffe"];
     if (number == nil) {
         number = @NO;
-        UIScreen *screen = [UIScreen mainScreen];
-        if (screen.bounds.size.height == 568.0) {
+        if (self.bounds.size.height == 568.0) {
             number = @YES;
         }
         [self sam_associatedData][@"girraffe"] = number;
