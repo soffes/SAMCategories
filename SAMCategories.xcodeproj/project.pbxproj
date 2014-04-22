@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214AD88D1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 214AD88C1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.m */; };
 		216320DE1861DAF7009EC93B /* NSArray+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 216320BF1861DAF7009EC93B /* NSArray+SAMAdditions.m */; };
 		216320DF1861DAF7009EC93B /* NSData+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 216320C11861DAF7009EC93B /* NSData+SAMAdditions.m */; };
 		216320E01861DAF7009EC93B /* NSDate+SAMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 216320C31861DAF7009EC93B /* NSDate+SAMAdditions.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		214AD88B1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SAMAdditions.h"; sourceTree = "<group>"; };
+		214AD88C1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SAMAdditions.m"; sourceTree = "<group>"; };
 		216320BE1861DAF7009EC93B /* NSArray+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SAMAdditions.h"; sourceTree = "<group>"; };
 		216320BF1861DAF7009EC93B /* NSArray+SAMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SAMAdditions.m"; sourceTree = "<group>"; };
 		216320C01861DAF7009EC93B /* NSData+SAMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SAMAdditions.h"; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				216320CB1861DAF7009EC93B /* NSString+SAMAdditions.m */,
 				216320CC1861DAF7009EC93B /* NSURL+SAMAdditions.h */,
 				216320CD1861DAF7009EC93B /* NSURL+SAMAdditions.m */,
+				214AD88B1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.h */,
+				214AD88C1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				216320EA1861DAF7009EC93B /* UIScreen+SAMAdditions.m in Sources */,
 				216320E91861DAF7009EC93B /* UIDevice+SAMAdditions.m in Sources */,
 				216320E11861DAF7009EC93B /* NSDictionary+SAMAdditions.m in Sources */,
+				214AD88D1906D2CC00CF8443 /* NSUserDefaults+SAMAdditions.m in Sources */,
 				216320E81861DAF7009EC93B /* UIControl+SAMAdditions.m in Sources */,
 				216320EB1861DAF7009EC93B /* UIScrollView+SAMAdditions.m in Sources */,
 				216320DF1861DAF7009EC93B /* NSData+SAMAdditions.m in Sources */,

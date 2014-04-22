@@ -15,6 +15,7 @@
 #import "NSObject+SAMAdditions.h"
 #import "NSString+SAMAdditions.h"
 #import "NSURL+SAMAdditions.h"
+#import "NSUserDefaults+SAMAdditions.h"
 
 // UIKit
 #if TARGET_OS_IPHONE
