@@ -133,4 +133,6 @@
  */
 - (CGFloat)sam_alpha;
 
+- (instancetype)sam_colorByInterpolatingToColor:(UIColor *)nextColor progress:(CGFloat)progress;
+
 @end

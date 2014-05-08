@@ -382,4 +382,20 @@
 	return CGColorGetAlpha(self.CGColor);
 }
 
+
+- (instancetype)sam_colorByInterpolatingToColor:(UIColor *)nextColor progress:(CGFloat)progress {
+	progress = fminf(1.0f, fmaxf(0.0f, progress));
+
+	CGFloat startRed, startGreen, startBlue, startAlpha;
+	[self getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
+
+	CGFloat endRed, endGreen, endBlue, endAlpha;
+	[self getRed:&endRed green:&endGreen blue:&endBlue alpha:&endAlpha];
+
+	return [[self class] colorWithRed:startRed + (endRed - startRed) * progress
+								green:startGreen + (endGreen - startGreen) * progress
+								 blue:startBlue + (endBlue - startBlue) * progress
+								alpha:startAlpha + (endAlpha - startAlpha) * progress];
+}
+
 @end
