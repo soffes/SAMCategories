@@ -35,17 +35,17 @@
 	if ([css hasPrefix:@"rgb"]) {
 		return [self sam_colorWithRGB:css];
 	}
-	
+
 	// HSL
 	if ([css hasPrefix:@"hsl"]) {
 		return [self sam_colorWithHSL:css];
 	}
-	
+
 	// Hex
 	if ([css hasPrefix:@"#"]) {
 		return [self sam_colorWithHex:css];
 	}
-	
+
 	// Named color
 	return [self sam_colorWithCSSName:css];
 }
@@ -53,12 +53,12 @@
 
 + (instancetype)sam_colorWithCSSName:(NSString *)name {
 	name = [name lowercaseString];
-	
+
 	// Transparent
 	if ([name isEqualToString:@"transparent"]) {
 		return [self clearColor];
 	}
-	
+
 	static NSDictionary *namedColors = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
@@ -80,7 +80,7 @@
 						@"blue": @"rgb(0,0,255)",
 						@"teal": @"rgb(0,128,128)",
 						@"aqua": @"rgb(0,255,255)",
-						
+
 						// Extended color keywords
 						@"aliceblue": @"rgb(240,248,255)",
 						@"antiquewhite": @"rgb(250,235,215)",
@@ -231,7 +231,7 @@
 						@"yellowgreen": @"rgb(154,205,50)"
 						};
 	});
-	
+
 	NSString *rgb = namedColors[name];
 	if (rgb) {
 		return [self sam_colorWithRGB:rgb];
@@ -242,40 +242,40 @@
 
 + (instancetype)sam_colorWithRGB:(NSString *)rgb {
 	rgb = [rgb lowercaseString];
-	
+
 	if (![rgb hasPrefix:@"rgb"]) {
 		return nil;
 	}
-	
+
 	rgb = [rgb stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"rgba( )"]];
-	
+
 	NSArray *values = [rgb componentsSeparatedByString:@","];
 	BOOL hasAlpha = values.count == 4;
 	if (values.count == 3 || hasAlpha) {
 		CGFloat alpha = hasAlpha ? [values[3] floatValue] : 1.0f;
 		return [self colorWithRed:[values[0] floatValue] / 255.0f green:[values[1] floatValue] / 255.0f blue:[values[2] floatValue] / 255.0f alpha:alpha];
 	}
-	
+
 	return nil;
 }
 
 
 + (instancetype)sam_colorWithHSL:(NSString *)hsl {
 	hsl = [hsl lowercaseString];
-	
+
 	if (![hsl hasPrefix:@"hsl"]) {
 		return nil;
 	}
-	
+
 	hsl = [hsl stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"hsla(%) "]];
-	
+
 	NSArray *values = [hsl componentsSeparatedByString:@","];
 	BOOL hasAlpha = values.count == 4;
 	if (values.count == 3 || hasAlpha) {
 		CGFloat alpha = hasAlpha ? [values[3] floatValue] : 1.0f;
 		return [self sam_colorWithHue:[values[0] floatValue] / 255.0f saturation:[values[1] floatValue] / 100.0f lightness:[values[2] floatValue] / 100.0f alpha:alpha];
 	}
-	
+
 	return nil;
 }
 
@@ -287,13 +287,13 @@
 	} else if ([hex hasPrefix:@"0x"]) {
 		hex = [hex substringFromIndex:2];
 	}
-	
+
 	// Invalid if not 3, 6, or 8 characters
 	NSUInteger length = [hex length];
 	if (length != 3 && length != 6 && length != 8) {
 		return nil;
 	}
-	
+
 	// Make the string 8 characters long for easier parsing
 	if (length == 3) {
 		NSString *r = [hex substringWithRange:NSMakeRange(0, 1)];
@@ -304,12 +304,12 @@
 	} else if (length == 6) {
 		hex = [hex stringByAppendingString:@"ff"];
 	}
-	
+
 	CGFloat red = [[hex substringWithRange:NSMakeRange(0, 2)] sam_hexValue] / 255.0f;
 	CGFloat green = [[hex substringWithRange:NSMakeRange(2, 2)] sam_hexValue] / 255.0f;
 	CGFloat blue = [[hex substringWithRange:NSMakeRange(4, 2)] sam_hexValue] / 255.0f;
 	CGFloat alpha = [[hex substringWithRange:NSMakeRange(6, 2)] sam_hexValue] / 255.0f;
-	
+
 	return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
@@ -323,26 +323,26 @@
 	CGColorRef color = self.CGColor;
 	size_t count = CGColorGetNumberOfComponents(color);
 	const CGFloat *components = CGColorGetComponents(color);
-	
+
 	NSString *hex = nil;
-	
+
 	// Grayscale
 	if (count == 2) {
 		NSUInteger white = (NSUInteger)(components[0] * 255.0f);
 		hex = [NSString stringWithFormat:@"%02lx%02lx%02lx", (unsigned long)white, (unsigned long)white, (unsigned long)white];
 	}
-	
+
 	// RGB
 	else if (count == 4) {
 		hex = [NSString stringWithFormat:@"%02lx%02lx%02lx", (unsigned long)(components[0] * 255.0f),
 			   (unsigned long)(components[1] * 255.0f), (unsigned long)(components[2] * 255.0f)];
 	}
-	
+
 	// Add alpha
 	if (hex && includeAlpha) {
 		hex = [hex stringByAppendingFormat:@"%02lx", (unsigned long)([self sam_alpha] * 255.0f)];
 	}
-	
+
 	// Unsupported color space
 	return hex;
 }
@@ -390,7 +390,7 @@
 	[self getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
 
 	CGFloat endRed, endGreen, endBlue, endAlpha;
-	[self getRed:&endRed green:&endGreen blue:&endBlue alpha:&endAlpha];
+	[nextColor getRed:&endRed green:&endGreen blue:&endBlue alpha:&endAlpha];
 
 	return [[self class] colorWithRed:startRed + (endRed - startRed) * progress
 								green:startGreen + (endGreen - startGreen) * progress
