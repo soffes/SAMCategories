@@ -96,4 +96,14 @@
  */
  - (CGPoint)sam_trueCenter;
 
+
+///------------------
+/// @name Auto Layout
+///------------------
+
+/**
+ Remove all constraints and mark the receiver as needing update constraints.
+ */
+- (void)sam_resetConstraints;
+
 @end
