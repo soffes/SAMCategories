@@ -29,10 +29,15 @@
 - (BOOL)sam_isCrappy;
 
 /**
-Check if the receiver is running iOS 7.
+ Check if the receiver is running iOS 7.
 
-@return `YES` if the device is running iOS 7 and `NO` if it is not.
+ @return `YES` if the device is running iOS 7 and `NO` if it is not.
 */
 - (BOOL)sam_isInnsbruck;
+
+/**
+ Returns the device hardware model. `iPhone5,2` or `iPad3,1` for example.
+ */
+- (NSString *)sam_hardwareModel;
 
 @end
