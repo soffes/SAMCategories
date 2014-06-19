@@ -10,6 +10,8 @@
 #import "NSString+SAMAdditions.h"
 #import "NSObject+SAMAdditions.h"
 
+#import <sys/sysctl.h>
+
 @implementation UIDevice (SAMAdditions)
 
 - (BOOL)sam_isSimulator {
@@ -43,6 +45,18 @@
         [self sam_associatedData][@"innsbruck"] = number;
     }
     return [number boolValue];
+}
+
+
+- (NSString *)sam_hardwareModel {
+    const char *type = "hw.machine";
+    size_t length;
+    sysctlbyname(type, NULL, &length, NULL, 0);
+    char *machine = malloc(length);
+    sysctlbyname(type, machine, &length, NULL, 0);
+    NSString *platform = [NSString stringWithUTF8String:machine];
+    free(machine);
+    return platform;
 }
 
 @end
