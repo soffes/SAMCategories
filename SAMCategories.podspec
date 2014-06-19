@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'SAMCategories'
-  spec.version = '0.5.1'
+  spec.version = '0.5.2'
   spec.authors = { 'Sam Soffes' => 'sam@soff.es' }
   spec.homepage = 'https://github.com/soffes/SAMCategories'
   spec.summary = 'Foundation and UIKit categories.'
