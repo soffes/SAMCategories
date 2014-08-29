@@ -156,12 +156,12 @@ static const short sam_base64DecodingTable[256] = {
 		char i2 = inputPoint < inputLength ? string[inputPoint++] : 'A'; /* 'A' will decode to \0 */
 		char i3 = inputPoint < inputLength ? string[inputPoint++] : 'A';
 		
-		output[outputPoint++] = (sam_base64DecodingTable[(int)i0] << 2) | (sam_base64DecodingTable[(int)i1] >> 4);
+		output[outputPoint++] = (uint8_t)(sam_base64DecodingTable[(int)i0] << 2) | (uint8_t)(sam_base64DecodingTable[(int)i1] >> 4);
 		if (outputPoint < outputLength) {
-			output[outputPoint++] = ((sam_base64DecodingTable[(int)i1] & 0xf) << 4) | (sam_base64DecodingTable[(int)i2] >> 2);
+			output[outputPoint++] = (uint8_t)((sam_base64DecodingTable[(int)i1] & 0xf) << 4) | (uint8_t)(sam_base64DecodingTable[(int)i2] >> 2);
 		}
 		if (outputPoint < outputLength) {
-			output[outputPoint++] = ((sam_base64DecodingTable[(int)i2] & 0x3) << 6) | sam_base64DecodingTable[(int)i3];
+			output[outputPoint++] = (uint8_t)((sam_base64DecodingTable[(int)i2] & 0x3) << 6) | (uint8_t)sam_base64DecodingTable[(int)i3];
 		}
 	}
 	
