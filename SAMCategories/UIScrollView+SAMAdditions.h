@@ -30,4 +30,16 @@
  */
 - (void)sam_scrollToTopAnimated:(BOOL)animated;
 
+/**
+ Scroll to the bottom of the receiver without animation.
+ */
+- (void)sam_scrollToBottom;
+
+/**
+ Scroll to the bottom of the receiver.
+ 
+ @param animated `YES` to animate the transition at a constant velocity to the new offset, `NO` to make the transition immediate.
+ */
+- (void)sam_scrollToBottomAnimated:(BOOL)animated;
+
 @end
