@@ -19,4 +19,13 @@
 	[self setContentOffset:CGPointMake(0.0f, 0.0f) animated:animated];
 }
 
+- (void)sam_scrollToBottom {
+  [self sam_scrollToBottomAnimated:NO];
+}
+
+- (void)sam_scrollToBottomAnimated:(BOOL)animated {
+  CGPoint bottomOffset = CGPointMake(0.0f, self.contentSize.height - self.bounds.size.height);
+  [self setContentOffset:bottomOffset animated:animated];
+}
+
 @end
